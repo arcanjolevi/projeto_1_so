@@ -1,4 +1,5 @@
 #!/bin/sh
+rm -f a.out
 echo "Compiling..."
 g++ main.cpp src/*.cpp
 
