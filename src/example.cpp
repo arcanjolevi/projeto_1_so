@@ -1,4 +1,4 @@
-#include "../include/example.h"
+#include "../include/example.hpp"
 
 /**
  * Funtion: function description here.

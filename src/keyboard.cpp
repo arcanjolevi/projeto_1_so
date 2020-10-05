@@ -1,4 +1,4 @@
-#include "../include/keyboard.h"
+#include "../include/keyboard.hpp"
 
 /**
  * Funtion: Read and return a character without the need for enter.

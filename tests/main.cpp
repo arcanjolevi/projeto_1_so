@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#include "../include/keyboard.h"
+#include "../include/keyboard.hpp"
 
 int main () {
 
