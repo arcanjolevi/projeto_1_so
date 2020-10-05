@@ -16,8 +16,38 @@ PCB::PCB(int _PID, int _createdTime){
   this->PID = _PID;
   this->createdTime = _createdTime;
   this->state = ready;
+  this->next = NULL;
 }
 
+
+/**
+* Funtion: Process control block contructor
+* @returns {PCB} - PCB instance
+* 
+* @precondition: none
+* @postcondition: Process created, state = ready, PID = -1
+*/
+PCB::PCB(){
+  this->PID = -1;
+  this->createdTime = 0;
+  this->state = ready;
+  this->next = NULL;
+}
+
+/**
+* Funtion: Set all data of PCB base in other PCB
+* @param {PCB} - Process control block
+* @returns {void}
+* 
+* @precondition: none
+* @postcondition: Al data changed
+*/
+void PCB::setPCB(PCB _other){
+  this->PID = _other.PID;
+  this->createdTime = _other.createdTime;
+  this->state = _other.state;
+  this->next = _other.next;
+}
 
 /**
 * Funtion: Change the process state
@@ -83,3 +113,32 @@ PCB::~PCB(){
   string _log = "Killing Process -> PID: " + to_string(this->PID);
   log(_log);
 }
+
+
+
+/**
+* Funtion: Change the next PCB
+* @param {*PCB} - adress of the next PCB || NULL
+* @returns {void}
+* 
+* @precondition: none
+* @postcondition: this->next changed
+*/
+void PCB::setNext(PCB * _next){
+  this->next = _next;
+}
+
+
+/**
+* Funtion: Change the next PCB
+* @param {*PCB} - adress of the next PCB || NULL
+* @returns {void}
+* 
+* @precondition: none
+* @postcondition: this->next changed
+*/
+PCB * PCB::getNext(){
+  return this->next;
+}
+
+

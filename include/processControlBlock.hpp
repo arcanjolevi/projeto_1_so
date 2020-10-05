@@ -3,11 +3,18 @@
 
 #include "states.hpp"
 
+
+
+
+/**
+  * Class: Represents a process control block structure
+  */
 class PCB {
   private: 
     int PID;
     State state;
     int createdTime = 0;
+    PCB * next;
 
   public:
 
@@ -21,6 +28,25 @@ class PCB {
   * @postcondition: Process created, state = ready
   */
   PCB(int _PID, int _createdTime);
+
+  /**
+  * Funtion: Process control block contructor
+  * @returns {PCB} - PCB instance
+  * 
+  * @precondition: none
+  * @postcondition: Process created, state = ready, PID = -1
+  */
+  PCB();
+
+  /**
+  * Funtion: Set all data of PCB base in other PCB
+  * @param {PCB} - Process control block
+  * @returns {void}
+  * 
+  * @precondition: none
+  * @postcondition: Al data changed
+  */
+  void setPCB(PCB _other);
 
   /**
   * Funtion: Change the process state
@@ -58,6 +84,25 @@ class PCB {
   * @postcondition: none
   */
   ~PCB();
+
+  /**
+  * Funtion: Change the next PCB
+  * @param {PCB*} - adress of the next PCB || NULL
+  * @returns {void}
+  * 
+  * @precondition: none
+  * @postcondition: this->next changed
+  */
+  void setNext(PCB * _next);
+
+  /**
+  * Funtion: Get the next PCB adress
+  * @returns {PCB*}
+  * 
+  * @precondition: none
+  * @postcondition: none
+  */
+  PCB * getNext();
 
 };
 
