@@ -13,21 +13,34 @@ class PCB {
   private: 
     int PID;
     State state;
-    int createdTime = 0;
     PCB * next;
+    double createdTime = 0;
+    double estimatedTime;
 
   public:
 
   /**
   * Funtion: Process control block contructor
   * @param {int} - Process ID
-  * @param {int} - created Time
+  * @param {double} - created Time
   * @returns {PCB} - PCB instance
   * 
   * @precondition: none
   * @postcondition: Process created, state = ready
   */
-  PCB(int _PID, int _createdTime);
+  PCB(int _PID, double _createdTime);
+
+  /**
+  * Funtion: Process control block contructor
+  * @param {int} - Process ID
+  * @param {double} - created Time
+  * @param {double} - estimatedTime
+  * @returns {PCB} - PCB instance
+  * 
+  * @precondition: none
+  * @postcondition: Process created, state = ready
+  */
+  PCB(int _PID, double _createdTime, double _estimatedTime);
 
   /**
   * Funtion: Process control block contructor
@@ -112,6 +125,15 @@ class PCB {
   * @postcondition: none
   */
   int getPID();
+
+  /**
+  * Funtion: Get the estimated time
+  * @returns {double}
+  * 
+  * @precondition: none
+  * @postcondition: none
+  */
+  double getEstimatedTime();
 
 };
 

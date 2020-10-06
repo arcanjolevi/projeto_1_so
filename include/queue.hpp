@@ -2,7 +2,8 @@
 #define QUEUE_H
 
 #include "processControlBlock.hpp"
-
+#include <iostream>
+using namespace std;
 
 
 /**
@@ -10,8 +11,8 @@
   */
 class Queue {
   private:
-    PCB * head;
-    PCB * tail;
+    PCB * head = 0;
+    PCB * tail = 0;
     int size = 0;
   public:
 
@@ -24,6 +25,16 @@ class Queue {
   * @postcondition: Queue created
   */
   Queue(PCB _newPCB);
+
+  /**
+  * Funtion: Queue contructor
+  * @param {PCB} - Process control block
+  * @returns {Queue} - Queue instance
+  * 
+  * @precondition: none
+  * @postcondition: Queue created
+  */
+  Queue(){}
 
   /**
   * Funtion: Queue destructor
@@ -42,7 +53,17 @@ class Queue {
   * @precondition: The process ID must be unique
   * @postcondition: PCB queued
   */
-  void push(PCB _newPCB);
+  bool push(PCB _newPCB);
+
+  /**
+  * Funtion: Push a PCB in to the queue in order
+  * @param {PCB} - Process control block
+  * @returns {bool} if opration performed then true else false
+  * 
+  * @precondition: The process ID must be unique
+  * @postcondition: PCB queued
+  */
+  bool pushInOrder(PCB _newPCB);
 
   /**
   * Funtion: Pop a PCB from queue
@@ -108,6 +129,15 @@ class Queue {
   * @postcondition: none
   */
   void show();
+
+  /**
+  * Funtion: return queue content in string
+  * @returns {string} queue elements
+  * 
+  * @precondition: none
+  * @postcondition: none
+  */
+  string queueToString();
 
 };
 

@@ -12,11 +12,29 @@ using namespace std;
 * @precondition: none
 * @postcondition: Process created, state = ready
 */
-PCB::PCB(int _PID, int _createdTime){
+PCB::PCB(int _PID, double _createdTime){
   this->PID = _PID;
   this->createdTime = _createdTime;
   this->state = ready;
   this->next = NULL;
+}
+
+/**
+* Funtion: Process control block contructor
+* @param {int} - Process ID
+* @param {double} - created Time
+* @param {double} - estimatedTime
+* @returns {PCB} - PCB instance
+* 
+* @precondition: none
+* @postcondition: Process created, state = ready
+*/
+PCB::PCB(int _PID, double _createdTime, double _estimatedTime){
+  this->PID = _PID;
+  this->createdTime = _createdTime;
+  this->state = ready;
+  this->next = NULL;
+  this->estimatedTime = _estimatedTime;
 }
 
 
@@ -47,6 +65,7 @@ void PCB::setPCB(PCB _other){
   this->createdTime = _other.createdTime;
   this->state = _other.state;
   this->next = _other.next;
+  this->estimatedTime = _other.estimatedTime;
 }
 
 /**
@@ -155,4 +174,16 @@ PCB * PCB::getNext(){
 */
 int PCB::getPID(){
   return this->PID;
+}
+
+
+/**
+* Funtion: Get the estimated time
+* @returns {double}
+* 
+* @precondition: none
+* @postcondition: none
+*/
+double PCB::getEstimatedTime(){
+  return this->estimatedTime;
 }

@@ -44,12 +44,51 @@ Queue::~Queue(){
 * @precondition: The process ID must be unique
 * @postcondition: PCB queued
 */
-void Queue::push(PCB _newPCB){
+bool Queue::push(PCB _newPCB){
   this->tail->setNext(new PCB());
   this->tail = this->tail->getNext();
   this->tail->setPCB(_newPCB);
   this->size++;
+
+  return true;
 }
+
+
+
+/**
+* Funtion: Push a PCB in to the queue in order
+* @param {PCB} - Process control block
+* @returns {bool} if opration performed then true else false
+* 
+* @precondition: The process ID must be unique
+* @postcondition: PCB queued
+*/
+bool Queue::pushInOrder(PCB _newPCB){
+  PCB * aux = this->head;
+
+  if(this->isEmpty()){
+    this->push(_newPCB);
+    return true;
+  }
+  while(aux){
+    if(aux->getEstimatedTime() > _newPCB.getEstimatedTime()){
+      PCB * aux2 = new PCB();
+      *aux2 = *aux;      
+      aux->setPCB(_newPCB);
+      aux->setNext(aux2);
+      if(this->tail == aux){
+        this->tail = aux2;
+      }
+      this->size++;
+      return true;
+    }
+    aux = aux->getNext();
+  }
+  
+  this->push(_newPCB);
+  return true;  
+}
+
 /**
 * Funtion: Pop a PCB from queue
 * @returns {PCB} a PCH if queue is not empty
@@ -65,12 +104,14 @@ PCB Queue::pop(){
     if(this->size == 1){
       this->tail = this->head;
     }
-    return *aux;
+    PCB aux2;
+    aux2.setPCB(*aux);
+    delete(aux);
+    return aux2;
   }else{
     log("Queue pop not performed, queue empty");
     return PCB();
   }
-
 }
 
 /**
@@ -163,4 +204,27 @@ void Queue::show(){
   }
 
   log(_log);
+}
+
+
+
+/**
+* Funtion: return queue content in string
+* @returns {string} queue elements
+* 
+* @precondition: none
+* @postcondition: none
+*/
+string Queue::queueToString(){
+  string content = "[";
+  PCB * aux = this->head;
+  while(aux){
+    content += to_string(aux->getPID());
+    if(aux != this->tail){
+      content += ", ";
+    }
+    aux = aux->getNext();
+  }
+  content += "]";
+  return content;
 }
