@@ -1,0 +1,13 @@
+4
+1
+estado
+campo1
+2
+estado
+campo2
+3
+estado
+campo3
+4
+estado
+campo4

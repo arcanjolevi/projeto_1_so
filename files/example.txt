@@ -1,0 +1,19 @@
+4 //N
+
+parâmetro1_alg1 //valor de um parâmetro do 1o algoritmo de escalonamento, o qual contém 2 parâmetros
+parâmetro2_alg1 //valor de um parâmetro do 1o algoritmo de escalonamento, o qual contém 2 parâmetros   
+parâmetro1_alg2 //valor de um parâmetro do 2o algoritmo de escalonamento, o qual contém 1 parâmetro     
+
+1 //ID 1o processo 
+estado //estado do 1o processo   
+campo3 //3o campo do 1o processo (ao menos 3 campos em cada processo, e todos os processos têm o mesmo número de campos)
+
+2 //ID 2o processo 
+estado //estado do 2o processo   
+campo3 //3o campo do 2o processo (ao menos 3 campos em cada processo, e todos os processos têm o mesmo número de campos)
+
+... //colocar informações para o 3o processo, nos moldes do que foi feito para os demais
+
+4 //ID 4o processo 
+estado //estado do 4o processo   
+campo3

@@ -1,6 +1,7 @@
 #include "../include/read_file.hpp"
+#include <fstream>
 
-bool findBeginPcb (ifstream &fn) {
+/*bool findBeginPcb (ifstream &fn) {
 	string aux;
 
 	while(!fn.eof()) {
@@ -11,29 +12,64 @@ bool findBeginPcb (ifstream &fn) {
 	}
 	return false;
 
+}*/
+
+string lineToDigit(string line) {
+	string aux = "";
+	for (int i = 0; i < (int)line.size(); i++) {
+		if (isdigit(line[i])) {
+			aux += line[i];
+		}
+	}
+	return aux;
 }
 
-void readId (ifstream &fn, string &id) {
+void readNumberProcesses(ifstream &fn, int &tam) {
+	fn >> tam;
+}
+
+int readPid (ifstream &fn) {
+	string line;
+	while(!fn.eof()) {
+		getline(fn, line);
+		if (isdigit(line[0])) {
+			return stoi(lineToDigit(line));
+		}
+	}
+	return false;
+}
+
+double readTime (ifstream &fn) {
+	double aux;
+	fn >> aux;
+	return aux;
+}
+
+string readState (ifstream &fn) {
 
 }
 
-void readTime (ifstream &fn, int &t) {
-
-}
-
-bool readFile (string file_name/*, coloca o objeto PCB aqui*/) {
+bool readFile (string file_name/*, PCB*/) {
 	
 	ifstream inputFile;
+
+    inputFile.open(file_name);
 
 	if( !inputFile.is_open() ) {
 		//errorMessagesRead(7);
 		return false;
 	}
+	int tam = 0;
+	readNumberProcesses(inputFile, tam);
+	cout << "O arquivo tem " << tam << "processos\n";
+	return true;
 
-	int i;
-	for (i = 0; /* acha o comeco do PCB*/ ; i++) {
-		// toda a leitura
+	for (int i = 0; i < tam ; i++) {
+		/*PCB.PID = */readPid(inputFile);
+		/*PCB.state = */readState(inputFile);
+		/*PCB.createdTime = */readTime(inputFile);
+		/*PCB.estimatedTime = */readTime(inputFile);
 	}
-	//PCB.tam = i;
+	inputFile.close();
 	return true;
 }

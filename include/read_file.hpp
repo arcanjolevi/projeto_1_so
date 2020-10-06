@@ -4,16 +4,20 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cctype>
 
 using namespace std;
 
-bool findBeginPcb (ifstream &fn);
+string lineToDigit(string line);
 
-void readId (ifstream &fn, string &id);
+void readNumberProcesses(ifstream &fn);
 
-void readTime (ifstream &fn, int &t);
+int readPid (ifstream &fn);
 
-bool readFile (string file_name/*, coloca o objeto PCB aqui*/);
+double readTime (ifstream &fn);
 
+string readState (ifstream &fn);
+
+bool readFile (string file_name/*, PCB*/);
 
 #endif
