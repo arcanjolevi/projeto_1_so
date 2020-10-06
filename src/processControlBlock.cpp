@@ -90,12 +90,17 @@ State PCB::getState(){
 void PCB::show(){
   string _log = "PID: " + to_string(this->PID) + " - State: ";
   if(this->state == terminated){
-    _log + "Terminated";
+    _log += "Terminated";
   }else if(this->state == ready){
-    _log + "Ready";
+    _log += "Ready";
   }else{
-    _log + "Running";
+    _log += "Running";
   }
+  _log += " - Created Time: " + to_string(this->createdTime);
+
+  int aux = (unsigned long int) this->next;
+
+  _log += " - Next adress: " + to_string(aux);
 
   log(_log);
 }
@@ -110,8 +115,7 @@ void PCB::show(){
 * @postcondition: none
 */
 PCB::~PCB(){
-  string _log = "Killing Process -> PID: " + to_string(this->PID);
-  log(_log);
+ 
 }
 
 
@@ -142,3 +146,13 @@ PCB * PCB::getNext(){
 }
 
 
+/**
+* Funtion: Get the PID
+* @returns {int}
+* 
+* @precondition: none
+* @postcondition: none
+*/
+int PCB::getPID(){
+  return this->PID;
+}

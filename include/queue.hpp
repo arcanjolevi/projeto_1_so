@@ -100,6 +100,15 @@ class Queue {
   */
   PCB * getTail();
 
+  /**
+  * Funtion: Print in to the log file the queue content
+  * @returns {void}
+  * 
+  * @precondition: none
+  * @postcondition: none
+  */
+  void show();
+
 };
 
 

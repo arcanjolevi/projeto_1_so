@@ -104,6 +104,15 @@ class PCB {
   */
   PCB * getNext();
 
+  /**
+  * Funtion: Get the PID
+  * @returns {int}
+  * 
+  * @precondition: none
+  * @postcondition: none
+  */
+  int getPID();
+
 };
 
 

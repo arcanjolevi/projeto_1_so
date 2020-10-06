@@ -15,6 +15,7 @@ Queue::Queue(PCB _newPCB){
   this->head = new PCB();
   this->head->setPCB(_newPCB);
   this->tail = this->head;
+  this->size++;
 }
 
 /**
@@ -60,11 +61,16 @@ PCB Queue::pop(){
   if(!this->isEmpty()){
     PCB * aux = this->head;
     this->head = this->head->getNext();
+    this->size--;
+    if(this->size == 1){
+      this->tail = this->head;
+    }
     return *aux;
   }else{
     log("Queue pop not performed, queue empty");
     return PCB();
   }
+
 }
 
 /**
@@ -127,4 +133,34 @@ void Queue::setTail(PCB * _tail){
 */
 PCB * Queue::getTail(){
   return this->tail;
+}
+
+
+
+/**
+* Funtion: Print in to the log file the queue content
+* @returns {void}
+* 
+* @precondition: none
+* @postcondition: none
+*/
+void Queue::show(){
+  string _log = "Queue: \n";
+  
+  if(this->isEmpty()){
+    _log += " Queue empty";
+  }else{ 
+    _log += " Head: " + to_string((unsigned long int) this->head);
+    _log += " Tail: " + to_string((unsigned long int) this->tail);
+    _log += "";
+    _log += " Size: " + to_string(this->size);
+    _log += "\nPCBs:\n";
+  }
+  PCB * aux = this->head;
+  while(aux){
+    _log += "PID: " + to_string(aux->getPID()) + "\n";
+    aux = aux->getNext();
+  }
+
+  log(_log);
 }
