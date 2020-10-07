@@ -1,0 +1,17 @@
+4 //Numero de processos
+
+0 //id_processo
+0 //ready=0,running=1,terminated=2
+7 //tempo estimado
+
+1 //id_processo
+0 //ready=0,running=1,terminated=2
+5 //tempo estimado
+
+2 //id_processo
+0 //ready=0,running=1,terminated=2
+10 //tempo estimado
+
+3 //id_processo
+0 //ready=0,running=1,terminated=2
+1 //tempo estimado

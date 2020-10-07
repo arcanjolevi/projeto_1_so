@@ -45,10 +45,20 @@ Queue::~Queue(){
 * @postcondition: PCB queued
 */
 bool Queue::push(PCB _newPCB){
-  this->tail->setNext(new PCB());
-  this->tail = this->tail->getNext();
-  this->tail->setPCB(_newPCB);
-  this->size++;
+  if(this->isEmpty()){
+    this->head = new PCB();
+    this->head->setPCB(_newPCB);
+    this->tail = this->head;
+    this->tail->setNext(NULL);
+    this->size++;
+  }else{
+    this->tail->setNext(new PCB());
+    this->tail = this->tail->getNext();
+    this->tail->setPCB(_newPCB);
+    this->tail->setNext(NULL);
+    this->size++;
+  }
+  
 
   return true;
 }
@@ -227,4 +237,15 @@ string Queue::queueToString(){
   }
   content += "]";
   return content;
+}
+
+/**
+* Funtion: Get size
+* @returns {int}
+* 
+* @precondition: none
+* @postcondition: none
+*/
+int Queue::getSize(){
+  return this->size;
 }

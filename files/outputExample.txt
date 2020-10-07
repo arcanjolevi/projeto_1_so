@@ -1,0 +1,50 @@
+
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+Shortest Job First
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+
+->Before Start Execution
+
+  ⇨ List of ready processes(PID): [3, 4, 5, 6]
+
+════════════════════════════════════════════════════════
+->Execution:
+
+  ⇨ Process selected for execution(Running):
+    ⇝ PID: 3, Estimated Time: 20
+
+  ⇨ List of ready processes: 
+    ⇝ [4, 5, 6]
+
+  ⇨ List of terminated processes:
+    ⇝ []
+
+════════════════════════════════════════════════════════
+.
+.
+.
+════════════════════════════════════════════════════════
+->Execution:
+
+  ⇨ Process selected for execution(Running):
+    ⇝ PID: 6, Estimated Time: 10
+
+  ⇨ List of ready processes: 
+    ⇝ []
+
+  ⇨ List of terminated processes:
+    ⇝ [3, 4, 5]
+
+════════════════════════════════════════════════════════
+->Execution end:
+
+  ⇨ List of ready processes: 
+    ⇝ []
+
+  ⇨ List of terminated processes:
+    ⇝ [3, 4, 5, 6]
+    
+  ⇨ Average response time: 20.5
+
+  ⇨ Context changes: 5
+

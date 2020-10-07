@@ -14,13 +14,15 @@ using namespace std;
 
 int main () {
 
-  cout << "Test program" << endl;
+  cout << "Test program" << endl << endl << endl;
 
 
-  PCB a(0, 0, 30);
-  PCB b(1, 0, 15);
-  PCB c(2, 0, 3);
-  PCB d(3, 0, 20);
+
+
+  PCB a(0, 0, 8);
+  PCB b(1, 0, 4);
+  PCB c(2, 0, 4);
+  PCB d(3, 0, 4);
 
   Queue * ready = new Queue(a);
 

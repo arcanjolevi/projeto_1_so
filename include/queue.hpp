@@ -139,6 +139,15 @@ class Queue {
   */
   string queueToString();
 
+  /**
+  * Funtion: Get size
+  * @returns {int}
+  * 
+  * @precondition: none
+  * @postcondition: none
+  */
+  int getSize();
+
 };
 
 
