@@ -5,3 +5,5 @@
 *.out
 
 logs/*.txt
+
+output/*.txt

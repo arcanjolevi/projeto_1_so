@@ -46,7 +46,8 @@ double readTime (ifstream &fn) {
 }
 
 string readState (ifstream &fn) {
-
+	//Coloquei codigo aqui porque tava dando warnning
+	return "";
 }
 
 bool readFile (string file_name/*, PCB*/) {

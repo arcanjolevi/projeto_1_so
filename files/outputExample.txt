@@ -35,7 +35,8 @@ Shortest Job First
   ⇨ List of terminated processes:
     ⇝ [3, 4, 5]
 
-════════════════════════════════════════════════════════
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+
 ->Execution end:
 
   ⇨ List of ready processes: 
@@ -43,7 +44,7 @@ Shortest Job First
 
   ⇨ List of terminated processes:
     ⇝ [3, 4, 5, 6]
-    
+
   ⇨ Average response time: 20.5
 
   ⇨ Context changes: 5

@@ -1,0 +1,174 @@
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+Shortest Job First
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+
+->Before Start Execution  
+ 
+    ⇨ List of ready processes(PID): [0, 1, 2, 3]
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ PID: 0, Estimated Time: 8.000000, Remaining Time: 8.000000
+
+    ⇨ List of ready processes:
+        ⇝ [1, 2, 3]
+
+    ⇨ List of terminated processes:
+        ⇝ []
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ PID: 1, Estimated Time: 4.000000, Remaining Time: 4.000000
+
+    ⇨ List of ready processes:
+        ⇝ [2, 3, 0]
+
+    ⇨ List of terminated processes:
+        ⇝ []
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ PID: 2, Estimated Time: 4.000000, Remaining Time: 4.000000
+
+    ⇨ List of ready processes:
+        ⇝ [3, 0, 1]
+
+    ⇨ List of terminated processes:
+        ⇝ []
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ PID: 3, Estimated Time: 4.000000, Remaining Time: 4.000000
+
+    ⇨ List of ready processes:
+        ⇝ [0, 1, 2]
+
+    ⇨ List of terminated processes:
+        ⇝ []
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ PID: 0, Estimated Time: 8.000000, Remaining Time: 5.000000
+
+    ⇨ List of ready processes:
+        ⇝ [1, 2, 3]
+
+    ⇨ List of terminated processes:
+        ⇝ []
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ PID: 1, Estimated Time: 4.000000, Remaining Time: 1.000000
+
+    ⇨ List of ready processes:
+        ⇝ [2, 3, 0]
+
+    ⇨ List of terminated processes:
+        ⇝ []
+
+
+════════════════════════════════════════════════════════
+->Process terminated:
+
+   ⇨ PID: 1
+        Estimated Time: 4.000000
+        Remaining Time: 0.000000
+        Response Time: 16.000000
+        Process State: Terminated
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ PID: 2, Estimated Time: 4.000000, Remaining Time: 1.000000
+
+    ⇨ List of ready processes:
+        ⇝ [3, 0]
+
+    ⇨ List of terminated processes:
+        ⇝ [1]
+
+
+════════════════════════════════════════════════════════
+->Process terminated:
+
+   ⇨ PID: 2
+        Estimated Time: 4.000000
+        Remaining Time: 0.000000
+        Response Time: 17.000000
+        Process State: Terminated
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ PID: 3, Estimated Time: 4.000000, Remaining Time: 1.000000
+
+    ⇨ List of ready processes:
+        ⇝ [0]
+
+    ⇨ List of terminated processes:
+        ⇝ [1, 2]
+
+
+════════════════════════════════════════════════════════
+->Process terminated:
+
+   ⇨ PID: 3
+        Estimated Time: 4.000000
+        Remaining Time: 0.000000
+        Response Time: 18.000000
+        Process State: Terminated
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ PID: 0, Estimated Time: 8.000000, Remaining Time: 2.000000
+
+    ⇨ List of ready processes:
+        ⇝ []
+
+    ⇨ List of terminated processes:
+        ⇝ [1, 2, 3]
+
+
+════════════════════════════════════════════════════════
+->Process terminated:
+
+   ⇨ PID: 0
+        Estimated Time: 8.000000
+        Remaining Time: 0.000000
+        Response Time: 20.000000
+        Process State: Terminated
+▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+
+->Execution end:
+
+    ⇨ List of ready processes:
+        ⇝ []
+
+    ⇨ List of terminated processes:
+        ⇝ [1, 2, 3, 0]
+
+    ⇨ Average response time:17.750000
+
+    ⇨ Context changes:8
+

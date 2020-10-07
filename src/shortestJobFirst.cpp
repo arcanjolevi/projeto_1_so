@@ -13,6 +13,7 @@
 SJF::SJF(Queue * _ready){
   this->ready = _ready;
   this->terminated = new Queue();
+  log("SJF Created\n");
 }
 
 

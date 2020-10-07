@@ -8,6 +8,7 @@ using namespace std;
 #include "../include/processControlBlock.hpp"
 #include "../include/queue.hpp"
 #include "../include/shortestJobFirst.hpp"
+#include "../include/roundRobin.hpp"
 
 #include <fstream>
 #include <string>
@@ -26,11 +27,11 @@ int main () {
 
   Queue * ready = new Queue(a);
 
-  ready->pushInOrder(b);
-  ready->pushInOrder(c);
-  ready->pushInOrder(d);
+  ready->push(b);
+  ready->push(c);
+  ready->push(d);
 
-  SJF * algorithm = new SJF(ready);
+  RR * algorithm = new RR(ready, 3);
 
   algorithm->run();
 

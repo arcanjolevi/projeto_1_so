@@ -3,7 +3,8 @@
 
 #include "states.hpp"
 
-
+#include <iostream>
+using namespace std;
 
 
 /**
@@ -15,7 +16,8 @@ class PCB {
     State state;
     PCB * next;
     double createdTime = 0;
-    double estimatedTime;
+    double estimatedTime = 0;
+    double remainingTime = 0;
 
   public:
 
@@ -81,6 +83,15 @@ class PCB {
   State getState();
 
   /**
+  * Funtion: get the current state of the process
+  * @returns {string} - Current state of the process
+  * 
+  * @precondition: none
+  * @postcondition: none
+  */
+  string getStateString();
+
+  /**
   * Funtion: Print the current data of PCB
   * @returns {void}
   * 
@@ -127,6 +138,25 @@ class PCB {
   int getPID();
 
   /**
+  * Funtion: Get the remainingTime
+  * @returns {double}
+  * 
+  * @precondition: none
+  * @postcondition: none
+  */
+  double getRemainingTime();
+
+  /**
+  * Funtion: Set the remainingTime
+  * @param {double}
+  * @returns {void}
+  * 
+  * @precondition: none
+  * @postcondition: none
+  */
+  void setRemainingTime(double _remainingTime);
+
+  /**
   * Funtion: Get the estimated time
   * @returns {double}
   * 
@@ -134,6 +164,16 @@ class PCB {
   * @postcondition: none
   */
   double getEstimatedTime();
+
+  /**
+  * Funtion: Simulate the process execution
+  * @param {double} - Quantum available for execution
+  * @returns {double} - if the process execute throughout all quantum return 0, else return the remaining time of the quantum
+  * 
+  * @precondition: state = running
+  * @returns {double} - Return the remaining time of the quantum
+  */
+  double execute(double _quantum);
 
 };
 

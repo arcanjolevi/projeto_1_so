@@ -35,6 +35,7 @@ PCB::PCB(int _PID, double _createdTime, double _estimatedTime){
   this->state = ready;
   this->next = NULL;
   this->estimatedTime = _estimatedTime;
+  this->remainingTime = estimatedTime;
 }
 
 
@@ -47,7 +48,6 @@ PCB::PCB(int _PID, double _createdTime, double _estimatedTime){
 */
 PCB::PCB(){
   this->PID = -1;
-  this->createdTime = 0;
   this->state = ready;
   this->next = NULL;
 }
@@ -66,6 +66,7 @@ void PCB::setPCB(PCB _other){
   this->state = _other.state;
   this->next = _other.next;
   this->estimatedTime = _other.estimatedTime;
+  this->remainingTime = _other.remainingTime;
 }
 
 /**
@@ -186,4 +187,74 @@ int PCB::getPID(){
 */
 double PCB::getEstimatedTime(){
   return this->estimatedTime;
+}
+
+
+/**
+* Funtion: Get the remainingTime
+* @returns {double}
+* 
+* @precondition: none
+* @postcondition: none
+*/
+double PCB::getRemainingTime(){
+  return this->remainingTime;
+}
+
+
+/**
+* Funtion: Set the remainingTime
+* @param {double}
+* @returns {void}
+* 
+* @precondition: none
+* @postcondition: none
+*/
+void PCB::setRemainingTime(double _remainingTime){
+  this->remainingTime = _remainingTime;
+}
+
+
+
+/**
+* Funtion: Simulate the process execution
+* @param {double} - Quantum available for execution
+* @returns {double} - Return the remaining time of the quantum
+* 
+* @precondition: state = running
+* @postcondition: process executed over quantum
+*/
+double PCB::execute(double _quantum){
+
+  if(this->state != running)
+    return _quantum;
+
+  if(this->remainingTime >= _quantum){
+    this->remainingTime -= _quantum;
+    return 0;     
+  }
+
+  _quantum -= this->remainingTime;
+  this->remainingTime = 0;
+
+  return _quantum;
+}
+
+
+
+/**
+* Funtion: get the current state of the process
+* @returns {string} - Current state of the process
+* 
+* @precondition: none
+* @postcondition: none
+*/
+string PCB::getStateString(){
+  if(this->state == ready){
+    return "Ready";
+  }else if(this->state == running){
+    return "Running";
+  }else{
+    return "Terminated";
+  }
 }
