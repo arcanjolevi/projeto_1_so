@@ -9,11 +9,11 @@
 class RR{
   private:
     Queue * ready;
-    Queue * terminated;
+    
     PCB * processRunning;
     double quantum;
   public:
-
+Queue * terminated;
   /**
   * Funtion: RR contructor
   * @param {Queue} - Ready process queue

@@ -1,6 +1,8 @@
 #ifndef READ_FILE
 #define READ_FILE
 
+#include "queue.hpp"
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -18,6 +20,6 @@ double readTime (ifstream &fn);
 
 string readState (ifstream &fn);
 
-bool readFile (string file_name/*, PCB*/);
+bool readFile (string file_name/*, PCB*/, Queue * readyProcesses, double * quantum);
 
 #endif

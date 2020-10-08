@@ -1,6 +1,7 @@
 #include "../include/shortestJobFirst.hpp"
 #include "../include/logs.hpp"
-
+#include "../include/states.hpp"
+#include "../include/writeFile.hpp"
 
 /**
 * Funtion: SJF contructor
@@ -25,6 +26,19 @@ SJF::SJF(Queue * _ready){
 * @postcondition: SJF destroyed
 */
 SJF::~SJF(){
+
+  if(ready != 0){
+    delete(ready);
+    ready = NULL;
+  }
+  if(terminated != 0){
+    delete(terminated);
+    terminated = NULL;
+  }
+  if(processRunning != 0){
+    delete(processRunning);
+    processRunning = NULL;
+  }
   log("SJF destroyed\n");
 }
 
@@ -37,59 +51,50 @@ SJF::~SJF(){
 */
 void SJF::run(){  
 
-  PCB running;
-  int antPID = running.getPID();
+  PCB * process = new PCB();
+  int antPID = -1;
   int responseTime = 0;
   int responseTimeSum = 0;
-  int contextChanges = 0;
+  int contextChanges = 0; 
 
-  cout << "▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀\nShortest Job First\n▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁\n";
-  cout << endl;
-  cout << "->Before Start Execution" << endl << endl;
-  //Print the queue of ready processes
-  cout << "    ⇨ List of ready processes(PID): " << this->ready->queueToString() << endl;
+  clearOutputFileSJF();
 
-  while(!this->ready->isEmpty()){  
-    cout << endl << "════════════════════════════════════════════════════════" << endl;  
-    cout << "->Execution:" << endl << endl;
-    cout << "    ⇨ Process selected for execution(Running):\n        ⇝ PID: ";
+  printFileHeaderSJF(this->ready->queueToString()); 
 
-    antPID = running.getPID();
-    running = this->ready->pop();
-    this->running = running;
+  while(!this->ready->isEmpty()){    
 
-    if(running.getPID() != -1 && antPID != -1)
-      contextChanges++;
+    antPID = process->getPID();
+    process->setPCB(this->ready->pop());//Pop a process of the queue of ready processes
+    process->setState(State::running);//Change the state of the process to running
 
-    cout << running.getPID() << ", Estimated Time: " << running.getEstimatedTime();
-    responseTime+= running.getEstimatedTime();
-    responseTimeSum += responseTime;
-    cout << ", Response Time: "<< responseTime << endl << endl;
+    this->processRunning = process;
+
+    if(process->getPID() != -1 && antPID != -1)//Verify context change
+      contextChanges++; 
+
+    printExecutionSJF(process);
     
-    cout << "    ⇨ List of ready processes:" << endl;
-    cout << "        ⇝ " << this->ready->queueToString() << endl << endl;
-      
-    cout << "    ⇨ List of terminated processes:" << endl;
-    cout << "        ⇝ " << this->terminated->queueToString() << endl << endl;
-
-   
-    this->terminated->push(running);  
     
+    
+    printAlgorithmInfoSJF(this->ready->queueToString(), this->terminated->queueToString());
+    
+
+    process->execute(process->getRemainingTime());
+
+    if(process->getRemainingTime() == 0){//Process terminated
+      process->setState(State::terminated);
+      responseTime+= process->getEstimatedTime();
+      responseTimeSum += responseTime;
+
+      printProcessTerminatedSJF(process, responseTime);
+    }
+    this->terminated->push(*process);  
+    this->processRunning = NULL;
     
   }
 
+  delete(process);
+  process = NULL;
 
-  cout << "▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁\n\n->Execution end:" << endl << endl;
-
-  cout << "    ⇨ List of ready processes:" << endl;
-  cout << "        ⇝ " << this->ready->queueToString() << endl << endl;
-
-  cout << "    ⇨ List of terminated processes:" << endl;
-  cout << "        ⇝ " << this->terminated->queueToString() << endl << endl;
-
-  cout << "    ⇨ Average response time:";
-  cout << responseTimeSum/this->terminated->getSize() << endl << endl;
-
-  cout << "    ⇨ Context changes:";
-  cout << contextChanges << endl << endl;
+  printExecutionEndSJF(this->ready->queueToString(), this->terminated->queueToString(), responseTimeSum/this->terminated->getSize(), contextChanges);
 }

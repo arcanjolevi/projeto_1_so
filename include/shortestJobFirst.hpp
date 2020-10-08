@@ -10,7 +10,7 @@ class SJF{
   private:
     Queue * ready;
     Queue * terminated;
-    PCB running;
+    PCB * processRunning;
   public:
 
   /**

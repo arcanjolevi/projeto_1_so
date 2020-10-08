@@ -31,6 +31,15 @@ RR::RR(Queue * _ready, double _quantum){
 * @postcondition: RR destroyed
 */
 RR::~RR(){
+  if(ready != NULL){
+    delete(ready);
+    ready = NULL;
+  }  
+  if(processRunning != NULL){
+    delete(processRunning);
+    processRunning = NULL;
+  }
+
   log("RR destroyed\n");
 }
 
@@ -45,6 +54,8 @@ RR::~RR(){
 */
 void RR::run(){
 
+  
+
   PCB * process = new PCB();
   int antPID = -1;
   double responseTime = 0;
@@ -52,7 +63,9 @@ void RR::run(){
   int contextChanges = 0;
   double quantumRemainingTime = 0;  
 
-  printFileHeader(this->ready->queueToString());  
+  clearOutputFileRR();
+
+  printFileHeaderRR(this->ready->queueToString(), this->quantum);  
 
   while(!this->ready->isEmpty()){     
 
@@ -65,11 +78,11 @@ void RR::run(){
     if(process->getPID() != -1 && antPID != -1)//Verify context change
       contextChanges++;    
 
-    printExecution(process);
+    printExecutionRR(process);
 
     quantumRemainingTime = process->execute(this->quantum);//Execute the process over quantum
 
-    printAlgorithmInfo(this->ready->queueToString(), this->terminated->queueToString());
+    printAlgorithmInfoRR(this->ready->queueToString(), this->terminated->queueToString());
 
     if(quantumRemainingTime == 0){//Process used all quantum
       responseTime+=this->quantum;
@@ -81,10 +94,20 @@ void RR::run(){
       this->terminated->push(*process);  
       this->processRunning = NULL;
       
-      printProcessTerminated(process, responseTime);
+      printProcessTerminatedRR(process, responseTime);
     }
   }
 
-  printExecutionEnd(this->ready->queueToString(), this->terminated->queueToString(), responseTimeSum/this->terminated->getSize(), contextChanges);
+  
+
+  delete(process);
+  process = NULL;
+
+
+  
+  printExecutionEndRR(this->ready->queueToString(), this->terminated->queueToString(), responseTimeSum/this->terminated->getSize(), contextChanges);
+
+  
+
 }
 

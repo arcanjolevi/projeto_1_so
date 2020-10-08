@@ -32,6 +32,15 @@ Queue::~Queue(){
     delete(this->head);
     this->head = next;
   }
+
+  if(head != NULL){
+    delete(this->head);
+    this->head = NULL;
+  }
+  if(tail != NULL){
+    delete(this->tail);
+    this->tail = NULL;
+  }
   log("Queue Destroyed");
 }
 
@@ -48,17 +57,14 @@ bool Queue::push(PCB _newPCB){
   if(this->isEmpty()){
     this->head = new PCB();
     this->head->setPCB(_newPCB);
-    this->tail = this->head;
-    this->tail->setNext(NULL);
-    this->size++;
+    this->tail = this->head;      
   }else{
     this->tail->setNext(new PCB());
     this->tail = this->tail->getNext();
     this->tail->setPCB(_newPCB);
-    this->tail->setNext(NULL);
-    this->size++;
   }
-  
+  this->tail->setNext(NULL);  
+  this->size++;
 
   return true;
 }

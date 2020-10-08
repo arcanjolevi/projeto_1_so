@@ -17,9 +17,6 @@ int main () {
 
   cout << "Test program" << endl << endl << endl;
 
-
-
-
   PCB a(0, 0, 8);
   PCB b(1, 0, 4);
   PCB c(2, 0, 4);
@@ -33,8 +30,13 @@ int main () {
 
   RR * algorithm = new RR(ready, 3);
 
+  //SJF * algorithm = new SJF(ready);
+  
   algorithm->run();
 
+  
+  delete(algorithm);
+  algorithm = NULL;
 
   cout << "Pressione qualquer tecla para encerrar... "; 
   getchChar();

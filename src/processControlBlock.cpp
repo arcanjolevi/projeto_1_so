@@ -17,6 +17,7 @@ PCB::PCB(int _PID, double _createdTime){
   this->createdTime = _createdTime;
   this->state = ready;
   this->next = NULL;
+  log("PCB created");
 }
 
 /**
@@ -36,6 +37,7 @@ PCB::PCB(int _PID, double _createdTime, double _estimatedTime){
   this->next = NULL;
   this->estimatedTime = _estimatedTime;
   this->remainingTime = estimatedTime;
+  log("PCB created");
 }
 
 
@@ -50,6 +52,7 @@ PCB::PCB(){
   this->PID = -1;
   this->state = ready;
   this->next = NULL;
+  log("PCB created");
 }
 
 /**
@@ -135,7 +138,7 @@ void PCB::show(){
 * @postcondition: none
 */
 PCB::~PCB(){
- 
+  log("PCB destroyed");
 }
 
 
