@@ -1,20 +1,13 @@
 #include "../include/read_file.hpp"
-#include <cstdio>
-#include <fstream>
 
-/*bool findBeginPcb (ifstream &fn) {
-	string aux;
+/**
+ * function: take the digits from the beginning of a string
+ * @param {string} - a line from the file
+ * @returns {string} - the digits that appears in the begin of the string
 
-	while(!fn.eof()) {
-		getline(fn, aux);
-		if (aux == "{") {
-			return true;
-		}
-	}
-	return false;
-
-}*/
-
+* @precondition: none
+* @postcondition: none
+ */
 string lineToDigit(string line) {
 	string aux = "";
 	for (int i = 0; i < (int)line.size(); i++) {
@@ -25,6 +18,14 @@ string lineToDigit(string line) {
 	return aux;
 }
 
+/**
+ * function: read from file the total number of process from the file
+ * @param {fn} - a implicit pointer to the open file
+ * @returns {int} - the total number of process
+
+ * @precondition: none
+ * @postcondition: none
+ */
 int readNumberProcesses(ifstream &fn) {
 	int tam;
 	char delimitator = 'v';
@@ -33,6 +34,14 @@ int readNumberProcesses(ifstream &fn) {
 	return tam;
 }
 
+/**
+ * function: read from file the process identification from the file
+ * @param {fn} - a implicit pointer to the open file
+ * @returns {int} - the PID of process
+
+ * @precondition: none
+ * @postcondition: none
+ */
 int readPid (ifstream &fn) {
 	string line;
 	while(!fn.eof()) {
@@ -44,6 +53,14 @@ int readPid (ifstream &fn) {
 	return false;
 }
 
+/**
+ * function: read a floating point from the file
+ * @param {fn} - a implicit pointer to the open file
+ * @returns {double} - associated with a time (estimated time, created time, quantum time)
+
+ * @precondition: none
+ * @postcondition: none
+ */
 double readTime (ifstream &fn) {
 	char delimitator = 'v';
 	double aux;
@@ -52,11 +69,17 @@ double readTime (ifstream &fn) {
 	return aux;
 }
 
-string readState (ifstream &fn) {
-	//Coloquei codigo aqui porque tava dando warnning
-	return "";
-}
+/**
+ * Funtion: controls file reading
+ * @param {file_name} - the name or path associated with a file
+ * @param {readyProcesses} - the linked list of all ready processes
+ * @param {quantum} - a pointer to the duration of a quantum
+ * @param {isRR} - allow the function to fill the list to both algorithms
+ * @returns {bool} - true = read the file correctly
 
+ * @precondition: none
+ * @postcondition: none
+ */
 bool readFile (string file_name, Queue * readyProcesses, double * quantum, bool isRR) {
 
 
@@ -102,7 +125,6 @@ bool readFile (string file_name, Queue * readyProcesses, double * quantum, bool 
 	int tam = 0;
 	tam = readNumberProcesses(inputFile);
 	cout << "O arquivo tem " << tam << "processos\n";
-	//return true;
 	if (isRR) {
 		*quantum = readTime(inputFile);
 	}else {
@@ -124,11 +146,6 @@ bool readFile (string file_name, Queue * readyProcesses, double * quantum, bool 
 		}else {
 			readyProcesses->pushInOrder(aux);
 		}
-
-
-
-		///*PCB.state = */readState(inputFile);//Acho que podemos tirar essa informação da leitura, e deixar pro programa fazer isso, consif=derando que todos os processos que chegam para executar estao em estado pronto(ready)
-		///*PCB.createdTime = */readTime(inputFile);
 	}
 	inputFile.close();
 	return true;
