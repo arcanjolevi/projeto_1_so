@@ -1,9 +1,5 @@
 #include "../include/writeFile.hpp"
 
-#include <iostream>
-using namespace std;
-
-
 /**
  * Funtion: Clear file for output
  * @returns {void}

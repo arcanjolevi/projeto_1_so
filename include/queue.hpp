@@ -3,6 +3,7 @@
 
 #include "processControlBlock.hpp"
 #include <iostream>
+#include "../include/logs.hpp"
 using namespace std;
 
 

@@ -1,8 +1,5 @@
 #include "../include/queue.hpp"
 
-#include "../include/logs.hpp"
-
-
 /**
 * Funtion: Queue contructor
 * @param {PCB} - Process control block

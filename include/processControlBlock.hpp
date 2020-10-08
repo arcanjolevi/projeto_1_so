@@ -4,6 +4,9 @@
 #include "states.hpp"
 
 #include <iostream>
+#include <string>
+#include "../include/logs.hpp"
+
 using namespace std;
 
 

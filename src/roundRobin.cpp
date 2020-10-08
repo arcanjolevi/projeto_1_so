@@ -1,10 +1,5 @@
 #include "../include/roundRobin.hpp"
 
-#include "../include/logs.hpp"
-#include "../include/states.hpp"
-
-#include "../include/writeFile.hpp"
-
 /**
 * Funtion: RR contructor
 * @param {Queue} - Ready process queue

@@ -2,6 +2,9 @@
 #define SJF_H
 
 #include "queue.hpp"
+#include "../include/logs.hpp"
+#include "../include/states.hpp"
+#include "../include/writeFile.hpp"
 
 /**
   * Class: Represents a SJF algorithm

@@ -1,7 +1,4 @@
 #include "../include/processControlBlock.hpp"
-#include "../include/logs.hpp"
-#include <string>
-using namespace std;
 
 /**
 * Funtion: Process control block contructor

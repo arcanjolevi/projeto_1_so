@@ -1,7 +1,4 @@
 #include "../include/shortestJobFirst.hpp"
-#include "../include/logs.hpp"
-#include "../include/states.hpp"
-#include "../include/writeFile.hpp"
 
 /**
 * Funtion: SJF contructor
