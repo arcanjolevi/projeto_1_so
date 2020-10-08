@@ -124,7 +124,7 @@ bool readFile (string file_name, Queue * readyProcesses, double * quantum, bool 
 
 	int tam = 0;
 	tam = readNumberProcesses(inputFile);
-	cout << "O arquivo tem " << tam << "processos\n";
+	//cout << "O arquivo tem " << tam << "processos\n";
 	if (isRR) {
 		*quantum = readTime(inputFile);
 	}else {
@@ -134,11 +134,11 @@ bool readFile (string file_name, Queue * readyProcesses, double * quantum, bool 
 
 	for (int i = 0; i < tam ; i++) {
 		_PID = readPid(inputFile);
-		cout << "Li o PID num:" << i + 1 << " = " << _PID << endl;
+		//cout << "Li o PID num:" << i + 1 << " = " << _PID << endl;
 		_createdTime = readTime(inputFile);
-		cout << "Li o tempo de criação num:" << i + 1 << " = " << _createdTime << endl;
+		//cout << "Li o tempo de criação num:" << i + 1 << " = " << _createdTime << endl;
 		_estimatedTime = readTime(inputFile);
-		cout << "Li o tempo estimado num:" << i + 1 << " = " << _estimatedTime << endl;
+		//cout << "Li o tempo estimado num:" << i + 1 << " = " << _estimatedTime << endl;
 
 		PCB aux(_PID, _createdTime, _estimatedTime);
 		if (isRR) {
