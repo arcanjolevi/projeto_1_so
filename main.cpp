@@ -17,7 +17,10 @@ int main () {
   Queue * readyProcesses = new Queue();
   double quantum;
   
-  bool teste = readFile("files/f1.txt", readyProcesses, &quantum);
+  bool teste = readFile("files/f1.txt", readyProcesses, &quantum, 0);
+  cout << teste << endl;
+
+  teste = readFile("files/f1.txt", readyProcesses, &quantum, 1);
   cout << teste << endl;
 
   RR * algorithm = new RR(readyProcesses, quantum);

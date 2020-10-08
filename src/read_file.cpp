@@ -1,4 +1,5 @@
 #include "../include/read_file.hpp"
+#include <cstdio>
 #include <fstream>
 
 /*bool findBeginPcb (ifstream &fn) {
@@ -24,8 +25,12 @@ string lineToDigit(string line) {
 	return aux;
 }
 
-void readNumberProcesses(ifstream &fn, int &tam) {
+int readNumberProcesses(ifstream &fn) {
+	int tam;
+	char delimitator = 'v';
 	fn >> tam;
+	while( delimitator != '\n') fn.get(delimitator);
+	return tam;
 }
 
 int readPid (ifstream &fn) {
@@ -40,8 +45,10 @@ int readPid (ifstream &fn) {
 }
 
 double readTime (ifstream &fn) {
+	char delimitator = 'v';
 	double aux;
 	fn >> aux;
+	while( delimitator != '\n') fn.get(delimitator);
 	return aux;
 }
 
@@ -50,56 +57,78 @@ string readState (ifstream &fn) {
 	return "";
 }
 
-bool readFile (string file_name/*, PCB*/, Queue * readyProcesses, double * quantum) {
-	
+bool readFile (string file_name, Queue * readyProcesses, double * quantum, bool isRR) {
+
 
 	/**
-		 * Mano tu pode fazer o seguinte:
-		 * 
-		 * int _PID; double _createdTime; double _estimatedTime;
-		 * 
-		 * _PID = read(...);
-		 * _createdTime = 0;
-		 * _estimatedTime = readFile(...);
-		 * 
-		 * PCB aux(_PID, _createdTime, double _estimatedTime); // Aqui voce irá criar uma varaivel local auxiliar do tipo PCB
-		 * 
-		 * //Obs: Veja que alterei os parametros da função, adicionando ponteiros para a lista de processos prontos e para uma variavel que guardará o quantum
-		 * 
-		 * Caso seja o ShortestJobFirst devemos usar o método que insere os processos na lista de forma ordenada
-		 * readyProcesses->pushInOrder(aux);
-		 * 
-		 * Caso seja o Round Robin podemos inserir os processos na ordem de leitura mesmo
-		 * 
-		 * readyProcesses->push(aux);
-		 * 
-		 * Isso é tudo, na questão dos processos
-		 * 
-		 * Na questão do quantum tu pode ler e jogar no conteudo do ponteiro quantum
-		 * 
-		 */
+	 * Mano tu pode fazer o seguinte:
+	 * 
+	 * int _PID; double _createdTime; double _estimatedTime;
+	 * 
+	 * _PID = read(...);
+	 * _createdTime = 0;
+	 * _estimatedTime = readFile(...);
+	 * 
+	 * PCB aux(_PID, _createdTime, double _estimatedTime); // Aqui voce irá criar uma varaivel local auxiliar do tipo PCB
+	 * 
+	 * //Obs: Veja que alterei os parametros da função, adicionando ponteiros para a lista de processos prontos e para uma variavel que guardará o quantum
+	 * 
+	 * Caso seja o ShortestJobFirst devemos usar o método que insere os processos na lista de forma ordenada
+	 * readyProcesses->pushInOrder(aux);
+	 * 
+	 * Caso seja o Round Robin podemos inserir os processos na ordem de leitura mesmo
+	 * 
+	 * readyProcesses->push(aux);
+	 * 
+	 * Isso é tudo, na questão dos processos
+	 * 
+	 * Na questão do quantum tu pode ler e jogar no conteudo do ponteiro quantum
+	 * 
+	 */
 
 
 
 
 	ifstream inputFile;
 
-    inputFile.open(file_name);
+	inputFile.open(file_name);
 
 	if( !inputFile.is_open() ) {
 		//errorMessagesRead(7);
 		return false;
 	}
+	int _PID; double _createdTime; double _estimatedTime;
+
 	int tam = 0;
-	readNumberProcesses(inputFile, tam);
+	tam = readNumberProcesses(inputFile);
 	cout << "O arquivo tem " << tam << "processos\n";
-	return true;
+	//return true;
+	if (isRR) {
+		*quantum = readTime(inputFile);
+	}else {
+		char c= 'v';
+		while( c != '\n') inputFile.get(c);
+	}
 
 	for (int i = 0; i < tam ; i++) {
-		/*PCB.PID = */readPid(inputFile);
-		/*PCB.state = */readState(inputFile);//Acho que podemos tirar essa informação da leitura, e deixar pro programa fazer isso, consif=derando que todos os processos que chegam para executar estao em estado pronto(ready)
-		/*PCB.createdTime = */readTime(inputFile);
-		/*PCB.estimatedTime = */readTime(inputFile);
+		_PID = readPid(inputFile);
+		cout << "Li o PID num:" << i + 1 << " = " << _PID << endl;
+		_createdTime = readTime(inputFile);
+		cout << "Li o tempo de criação num:" << i + 1 << " = " << _createdTime << endl;
+		_estimatedTime = readTime(inputFile);
+		cout << "Li o tempo estimado num:" << i + 1 << " = " << _estimatedTime << endl;
+
+		PCB aux(_PID, _createdTime, _estimatedTime);
+		if (isRR) {
+			readyProcesses->push(aux);
+		}else {
+			readyProcesses->pushInOrder(aux);
+		}
+
+
+
+		///*PCB.state = */readState(inputFile);//Acho que podemos tirar essa informação da leitura, e deixar pro programa fazer isso, consif=derando que todos os processos que chegam para executar estao em estado pronto(ready)
+		///*PCB.createdTime = */readTime(inputFile);
 	}
 	inputFile.close();
 	return true;
