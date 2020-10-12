@@ -15,13 +15,14 @@ using namespace std;
 string getFileName(){
   system("clear");
   string arquivo;
-  cout << "Certifique-se de que o arquivo de entrada está na pasta input e no mesmo diretório do programa.\n   ⇨ Insira o nome do arquivo com a sua extensão: "; 
+  cout << "Certifique-se de que o arquivo de entrada está na pasta input e no mesmo diretório do programa.\n"; 
+  cout << "Arquivos disponiveis na pasta input:\n";
+  system("ls input");
+  cout <<" ⇨ Insira o nome do arquivo com a sua extensão: "; 
   cin >> arquivo;
   system("clear");
   return arquivo;
 }
-
-
 
 int main () {
 
@@ -35,12 +36,13 @@ int main () {
   getchChar();
   system("Clear");
 
+
   while(!readFileOk){
     arquivo = getFileName();
     readFileOk = readFile("input/" + arquivo , readyProcesses, &quantum, true);
   }
 
-  cout << "Os dados do processos serão processados de acordo com os algoritmos Round Robin e Shortest Job First." << endl;
+  cout << "Os dados dos processos serão processados de acordo com os algoritmos Round Robin e Shortest Job First." << endl;
   cout << "Os arquivos correspondentes aos algoritmos estarão nos seguites destinos:" << endl;
   cout << "output/roundRobin.txt e output/shortestjobFirst.txt" << endl << endl;
 
