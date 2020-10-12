@@ -12,7 +12,7 @@ Shortest Job First
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ PID: 0, Estimated Time: 8.000000, Remaining Time: 8.000000
+        ⇝ Process: Firefox, PID: 0, Estimated Time: 10.400000, Remaining Time: 10.400000
 
     ⇨ List of ready processes:
         ⇝ [1, 2, 3]
@@ -24,17 +24,17 @@ Shortest Job First
 ════════════════════════════════════════════════════════
 ->Process terminated:
 
-   ⇨ PID: 0
-        Estimated Time: 8.000000
+   ⇨ Process: Firefox, PID: 0
+        Estimated Time: 10.400000
         Remaining Time: 0.000000
-        Response Time: 8.000000
+        Response Time: 10.400000
         Process State: Terminated
 
  ════════════════════════════════════════════════════════
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ PID: 1, Estimated Time: 4.000000, Remaining Time: 4.000000
+        ⇝ Process: Chrome, PID: 1, Estimated Time: 14.100000, Remaining Time: 14.100000
 
     ⇨ List of ready processes:
         ⇝ [2, 3]
@@ -46,17 +46,17 @@ Shortest Job First
 ════════════════════════════════════════════════════════
 ->Process terminated:
 
-   ⇨ PID: 1
-        Estimated Time: 4.000000
+   ⇨ Process: Chrome, PID: 1
+        Estimated Time: 14.100000
         Remaining Time: 0.000000
-        Response Time: 12.000000
+        Response Time: 24.500000
         Process State: Terminated
 
  ════════════════════════════════════════════════════════
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ PID: 2, Estimated Time: 4.000000, Remaining Time: 4.000000
+        ⇝ Process: Word, PID: 2, Estimated Time: 16.000000, Remaining Time: 16.000000
 
     ⇨ List of ready processes:
         ⇝ [3]
@@ -68,17 +68,17 @@ Shortest Job First
 ════════════════════════════════════════════════════════
 ->Process terminated:
 
-   ⇨ PID: 2
-        Estimated Time: 4.000000
+   ⇨ Process: Word, PID: 2
+        Estimated Time: 16.000000
         Remaining Time: 0.000000
-        Response Time: 16.000000
+        Response Time: 40.500000
         Process State: Terminated
 
  ════════════════════════════════════════════════════════
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ PID: 3, Estimated Time: 4.000000, Remaining Time: 4.000000
+        ⇝ Process: PDF_Reader, PID: 3, Estimated Time: 18.000000, Remaining Time: 18.000000
 
     ⇨ List of ready processes:
         ⇝ []
@@ -90,10 +90,10 @@ Shortest Job First
 ════════════════════════════════════════════════════════
 ->Process terminated:
 
-   ⇨ PID: 3
-        Estimated Time: 4.000000
+   ⇨ Process: PDF_Reader, PID: 3
+        Estimated Time: 18.000000
         Remaining Time: 0.000000
-        Response Time: 20.000000
+        Response Time: 58.500000
         Process State: Terminated
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 
@@ -105,7 +105,7 @@ Shortest Job First
     ⇨ List of terminated processes:
         ⇝ [0, 1, 2, 3]
 
-    ⇨ Average response time:14.000000
+    ⇨ Average response time:33.475000
 
     ⇨ Context changes:3
 

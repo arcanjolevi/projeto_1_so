@@ -107,7 +107,7 @@ void printFileHeaderSJF(string readyList){
 void printExecutionRR(PCB * process){
     roundRobinOutput( "\n ════════════════════════════════════════════════════════\n");  
     roundRobinOutput( "->Execution: \n \n");
-    roundRobinOutput( "    ⇨ Process selected for execution(Running):\n        ⇝ PID: ");
+    roundRobinOutput( "    ⇨ Process selected for execution(Running):\n        ⇝ Process: " + process->getName() + ", PID: ");
     roundRobinOutput( to_string(process->getPID()));
     roundRobinOutput(", Estimated Time: ");
     roundRobinOutput(to_string(process->getEstimatedTime()));
@@ -142,7 +142,7 @@ void printAlgorithmInfoRR(string readyList, string terminatedList){
 void printProcessTerminatedRR(PCB * process, double responseTime){
   roundRobinOutput( "\n════════════════════════════════════════════════════════\n");
   roundRobinOutput( "->Process terminated:\n\n");
-  roundRobinOutput( "   ⇨ PID: " + to_string(process->getPID()) + "\n");
+  roundRobinOutput( "   ⇨ Process: " + process->getName() + ", PID: " + to_string(process->getPID()) + "\n");
   roundRobinOutput( "        Estimated Time: " + to_string(process->getEstimatedTime()) + "\n");
   roundRobinOutput( "        Remaining Time: " + to_string(process->getRemainingTime()) + "\n");
   roundRobinOutput( "        Response Time: "+ to_string(responseTime) + "\n");
@@ -189,7 +189,7 @@ void printExecutionEndRR(string readyList, string terminatedList, double average
 void printExecutionSJF(PCB * process){
   sjfOutput( "\n ════════════════════════════════════════════════════════\n");  
   sjfOutput( "->Execution: \n \n");
-  sjfOutput( "    ⇨ Process selected for execution(Running):\n        ⇝ PID: ");
+  sjfOutput( "    ⇨ Process selected for execution(Running):\n        ⇝ Process: " + process->getName() + ", PID: ");
   sjfOutput( to_string(process->getPID()));
   sjfOutput(", Estimated Time: ");
   sjfOutput(to_string(process->getEstimatedTime()));
@@ -224,7 +224,7 @@ void printAlgorithmInfoSJF(string readyList, string terminatedList){
 void printProcessTerminatedSJF(PCB * process, double responseTime){
   sjfOutput( "\n════════════════════════════════════════════════════════\n");
   sjfOutput( "->Process terminated:\n\n");
-  sjfOutput( "   ⇨ PID: " + to_string(process->getPID()) + "\n");
+  sjfOutput( "   ⇨ Process: " + process->getName() + ", PID: " + to_string(process->getPID()) + "\n");
   sjfOutput( "        Estimated Time: " + to_string(process->getEstimatedTime()) + "\n");
   sjfOutput( "        Remaining Time: " + to_string(process->getRemainingTime()) + "\n");
   sjfOutput( "        Response Time: "+ to_string(responseTime) + "\n");

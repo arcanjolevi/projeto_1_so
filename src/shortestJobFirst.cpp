@@ -28,10 +28,6 @@ SJF::~SJF(){
     delete(ready);
     ready = NULL;
   }
-  if(terminated != 0){
-    delete(terminated);
-    terminated = NULL;
-  }
   if(processRunning != 0){
     delete(processRunning);
     processRunning = NULL;
@@ -50,8 +46,8 @@ void SJF::run(){
 
   PCB * process = new PCB();
   int antPID = -1;
-  int responseTime = 0;
-  int responseTimeSum = 0;
+  double responseTime = 0;
+  double responseTimeSum = 0;
   int contextChanges = 0; 
 
   clearOutputFileSJF();

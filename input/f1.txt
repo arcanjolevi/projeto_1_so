@@ -1,0 +1,14 @@
+4
+4.0
+0
+Firefox
+10.4
+1
+Chrome
+14.1
+2
+Word
+16.0
+3
+PDF_Reader
+18.0

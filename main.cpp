@@ -12,29 +12,61 @@ using namespace std;
 #include "include/keyboard.hpp"
 #include "include/read_file.hpp"
 
+string getFileName(){
+  system("clear");
+  string arquivo;
+  cout << "Certifique-se de que o arquivo de entrada está na pasta input e no mesmo diretório do programa.\n   ⇨ Insira o nome do arquivo com a sua extensão: "; 
+  cin >> arquivo;
+  system("clear");
+  return arquivo;
+}
+
+
+
 int main () {
 
+  string arquivo;
   Queue * readyProcesses = new Queue();
+  bool readFileOk = false;
   double quantum;
-  
-  bool teste = readFile("files/f1.txt", readyProcesses, &quantum, 0);
-  cout << teste << endl;
 
-  teste = readFile("files/f1.txt", readyProcesses, &quantum, 1);
-  cout << teste << endl;
-
-  RR * algorithm = new RR(readyProcesses, quantum);
-
-
-  algorithm->run();
-
-  
-  delete(algorithm);
-  algorithm = NULL;
-
-
-  cout << "Main program" << endl;
-  cout << "Pressione qualquer tecla para encerrar... "; 
+  cout << "Main Program" << endl << endl << endl;
+  cout << "Pressione qualquer tecla para Iniciar..."; 
   getchChar();
+  system("Clear");
+
+  while(!readFileOk){
+    arquivo = getFileName();
+    readFileOk = readFile("input/" + arquivo , readyProcesses, &quantum, true);
+  }
+
+  cout << "Os dados do processos serão processados de acordo com os algoritmos Round Robin e Shortest Job First." << endl;
+  cout << "Os arquivos correspondentes aos algoritmos estarão nos seguites destinos:" << endl;
+  cout << "output/roundRobin.txt e output/shortestjobFirst.txt" << endl << endl;
+
+  cout << "Pressione qualquer tecla para Continuar..."; 
+  getchChar();
+  system("clear");
+
+  
+
+  //Round robin algorithm  
+  
+  RR * algorithm1 = new RR(readyProcesses, quantum);
+  algorithm1->run();
+  delete(algorithm1);
+
+  //SJF algorithm
+  readyProcesses = new Queue();
+  readFile("files/f1.txt", readyProcesses, &quantum, false);
+  SJF * algorithm2 = new SJF(readyProcesses);
+  algorithm2->run();
+  delete(algorithm2);
+
+
+  cout << "Processamento realizado." << endl;
+  cout << "Pressione qualquer tecla para encerrar..."; 
+  getchChar();
+
   return 0;
 }
