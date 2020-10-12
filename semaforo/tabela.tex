@@ -1,0 +1,58 @@
+%% Incluindo os pacotes necessários
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{booktabs}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{colortbl}
+\usepackage{framed}
+
+%% Definindo o Autor e o título
+\author{Victor Emanuel Almeida \and Levi Cícero Arcanjo}
+\title{Simulação e algorítimo de semáforos}
+
+%% Estilo da página
+\pagestyle{fancy}
+\fancyhead[L]{}
+\fancyhead[R]{}
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{}
+\renewcommand{\headrulewidth}{0.7pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+\begin{document}
+\maketitle\thispagestyle{fancy}
+\begin{itemize}
+	\item Tempo de criação:
+	\begin{itemize}
+			\item leitor 1 = momento 10
+			\item leitor 2 = momento 4
+			\item leitor 3 = momento 1
+			\item escritor 1 = momento 14
+			\item escritor 2 = momento 9
+	\end{itemize}
+	\item Tempo de execução:
+		\begin{itemize}
+			\item leitor 1 = momento 8
+			\item leitor 2 = momento 7
+			\item leitor 3 = momento 15
+			\item escritor 1 = momento 6
+			\item escritor 2 = momento 5
+		\end{itemize}
+\end{itemize}
+	 
+\begin{figure*}[!htb]
+	\centering
+	\includegraphics[keepaspectratio, width=\textwidth]{tabela.jpeg}
+	\caption{\label{fig:tabela.pdf} Simulação do algorítimo}
+\end{figure*}
+\end{document}
