@@ -16,6 +16,7 @@ using namespace std;
 class PCB {
   private: 
     int PID;
+    string name = "";
     State state;
     PCB * next;
     double createdTime = 0;
@@ -27,25 +28,25 @@ class PCB {
   /**
   * Funtion: Process control block contructor
   * @param {int} - Process ID
-  * @param {double} - created Time
+  * @param {string} - Process name
   * @returns {PCB} - PCB instance
   * 
   * @precondition: none
   * @postcondition: Process created, state = ready
   */
-  PCB(int _PID, double _createdTime);
+  PCB(int _PID, string _name);
 
   /**
   * Funtion: Process control block contructor
   * @param {int} - Process ID
-  * @param {double} - created Time
+  * @param {string} - Process Name
   * @param {double} - estimatedTime
   * @returns {PCB} - PCB instance
   * 
   * @precondition: none
   * @postcondition: Process created, state = ready
   */
-  PCB(int _PID, double _createdTime, double _estimatedTime);
+  PCB(int _PID, string _name, double _estimatedTime);
 
   /**
   * Funtion: Process control block contructor
@@ -167,6 +168,15 @@ class PCB {
   * @postcondition: none
   */
   double getEstimatedTime();
+
+  /**
+  * Funtion: Get process name
+  * @returns {string}
+  * 
+  * @precondition: none
+  * @postcondition: none
+  */
+  string getName();
 
   /**
   * Funtion: Simulate the process execution

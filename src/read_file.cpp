@@ -1,4 +1,6 @@
 #include "../include/read_file.hpp"
+#include <iostream>
+using namespace std;
 
 /**
  * function: take the digits from the beginning of a string
@@ -54,14 +56,30 @@ int readPid (ifstream &fn) {
 }
 
 /**
- * function: read a floating point from the file
+ * function: read a string from the file
  * @param {fn} - a implicit pointer to the open file
- * @returns {double} - associated with a time (estimated time, created time, quantum time)
+ * @returns {string} - Name of the process
 
  * @precondition: none
  * @postcondition: none
  */
-double readTime (ifstream &fn) {
+string readName (ifstream &fn) {
+	char delimitator = 'v';
+	string aux;
+	fn >> aux;
+	while( delimitator != '\n') fn.get(delimitator);
+	return aux;
+}
+
+/**
+ * function: read a float point from the file
+ * @param {fn} - a implicit pointer to the open file
+ * @returns {double} - time
+
+ * @precondition: none
+ * @postcondition: none
+ */
+double readTime (ifstream &fn){
 	char delimitator = 'v';
 	double aux;
 	fn >> aux;
@@ -82,36 +100,6 @@ double readTime (ifstream &fn) {
  */
 bool readFile (string file_name, Queue * readyProcesses, double * quantum, bool isRR) {
 
-
-	/**
-	 * Mano tu pode fazer o seguinte:
-	 * 
-	 * int _PID; double _createdTime; double _estimatedTime;
-	 * 
-	 * _PID = read(...);
-	 * _createdTime = 0;
-	 * _estimatedTime = readFile(...);
-	 * 
-	 * PCB aux(_PID, _createdTime, double _estimatedTime); // Aqui voce irá criar uma varaivel local auxiliar do tipo PCB
-	 * 
-	 * //Obs: Veja que alterei os parametros da função, adicionando ponteiros para a lista de processos prontos e para uma variavel que guardará o quantum
-	 * 
-	 * Caso seja o ShortestJobFirst devemos usar o método que insere os processos na lista de forma ordenada
-	 * readyProcesses->pushInOrder(aux);
-	 * 
-	 * Caso seja o Round Robin podemos inserir os processos na ordem de leitura mesmo
-	 * 
-	 * readyProcesses->push(aux);
-	 * 
-	 * Isso é tudo, na questão dos processos
-	 * 
-	 * Na questão do quantum tu pode ler e jogar no conteudo do ponteiro quantum
-	 * 
-	 */
-
-
-
-
 	ifstream inputFile;
 
 	inputFile.open(file_name);
@@ -120,7 +108,7 @@ bool readFile (string file_name, Queue * readyProcesses, double * quantum, bool 
 		//errorMessagesRead(7);
 		return false;
 	}
-	int _PID; double _createdTime; double _estimatedTime;
+	int _PID; double _estimatedTime; string _processName;
 
 	int tam = 0;
 	tam = readNumberProcesses(inputFile);
@@ -128,19 +116,21 @@ bool readFile (string file_name, Queue * readyProcesses, double * quantum, bool 
 	if (isRR) {
 		*quantum = readTime(inputFile);
 	}else {
-		char c= 'v';
+		char c = 'v';
 		while( c != '\n') inputFile.get(c);
 	}
 
 	for (int i = 0; i < tam ; i++) {
 		_PID = readPid(inputFile);
-		//cout << "Li o PID num:" << i + 1 << " = " << _PID << endl;
-		_createdTime = readTime(inputFile);
-		//cout << "Li o tempo de criação num:" << i + 1 << " = " << _createdTime << endl;
-		_estimatedTime = readTime(inputFile);
-		//cout << "Li o tempo estimado num:" << i + 1 << " = " << _estimatedTime << endl;
 
-		PCB aux(_PID, _createdTime, _estimatedTime);
+		_processName = readName(inputFile);
+		
+		_estimatedTime = readTime(inputFile);				
+
+		PCB aux(_PID, _processName, _estimatedTime);
+
+		aux.show();
+		
 		if (isRR) {
 			readyProcesses->push(aux);
 		}else {

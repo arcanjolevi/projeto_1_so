@@ -42,9 +42,20 @@ int readNumberProcesses(ifstream &fn);
 int readPid (ifstream &fn);
 
 /**
- * function: read a floating point from the file
+ * function: read a string from the file
  * @param {fn} - a implicit pointer to the open file
- * @returns {double} - associated with a time (estimated time, created time, quantum time)
+ * @returns {string} - Name of the process
+
+ * @precondition: none
+ * @postcondition: none
+ */
+string readName (ifstream &fn);
+
+
+/**
+ * function: read a float point from the file
+ * @param {fn} - a implicit pointer to the open file
+ * @returns {double} - time
 
  * @precondition: none
  * @postcondition: none

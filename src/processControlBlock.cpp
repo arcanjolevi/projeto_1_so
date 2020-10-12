@@ -3,15 +3,16 @@
 /**
 * Funtion: Process control block contructor
 * @param {int} - Process ID
-* @param {int} - created Time
+* @param {string} - Process name
 * @returns {PCB} - PCB instance
 * 
 * @precondition: none
 * @postcondition: Process created, state = ready
 */
-PCB::PCB(int _PID, double _createdTime){
+PCB::PCB(int _PID, string _name){
   this->PID = _PID;
-  this->createdTime = _createdTime;
+  this->createdTime = 0;
+  this->name = _name;
   this->state = ready;
   this->next = NULL;
   log("PCB created");
@@ -20,21 +21,21 @@ PCB::PCB(int _PID, double _createdTime){
 /**
 * Funtion: Process control block contructor
 * @param {int} - Process ID
-* @param {double} - created Time
+* @param {string} - Process name
 * @param {double} - estimatedTime
 * @returns {PCB} - PCB instance
 * 
 * @precondition: none
 * @postcondition: Process created, state = ready
 */
-PCB::PCB(int _PID, double _createdTime, double _estimatedTime){
+PCB::PCB(int _PID, string _name, double _estimatedTime){
   this->PID = _PID;
-  this->createdTime = _createdTime;
+  this->createdTime = 0;
+  this->name = _name;
   this->state = ready;
   this->next = NULL;
   this->estimatedTime = _estimatedTime;
   this->remainingTime = estimatedTime;
-  log("PCB created");
 }
 
 
@@ -49,7 +50,6 @@ PCB::PCB(){
   this->PID = -1;
   this->state = ready;
   this->next = NULL;
-  log("PCB created");
 }
 
 /**
@@ -61,12 +61,13 @@ PCB::PCB(){
 * @postcondition: Al data changed
 */
 void PCB::setPCB(PCB _other){
-  this->PID = _other.PID;
-  this->createdTime = _other.createdTime;
-  this->state = _other.state;
-  this->next = _other.next;
-  this->estimatedTime = _other.estimatedTime;
-  this->remainingTime = _other.remainingTime;
+  this->PID = _other.getPID();
+  this->createdTime = 0;
+  this->state = _other.getState();
+  this->next = _other.getNext();
+  this->estimatedTime = _other.getEstimatedTime();
+  this->remainingTime = _other.getRemainingTime();
+  this->name = _other.getName();
 }
 
 /**
@@ -108,7 +109,7 @@ State PCB::getState(){
 * @postcondition: none
 */
 void PCB::show(){
-  string _log = "PID: " + to_string(this->PID) + " - State: ";
+  string _log = "Process: " + this->name + " - PID: " + to_string(this->PID) + " - State: ";
   if(this->state == terminated){
     _log += "Terminated";
   }else if(this->state == ready){
@@ -116,7 +117,7 @@ void PCB::show(){
   }else{
     _log += "Running";
   }
-  _log += " - Created Time: " + to_string(this->createdTime);
+  _log += " - EstimatedTime: " + to_string(this->estimatedTime);
 
   int aux = (unsigned long int) this->next;
 
@@ -135,7 +136,7 @@ void PCB::show(){
 * @postcondition: none
 */
 PCB::~PCB(){
-  log("PCB destroyed");
+
 }
 
 
@@ -257,4 +258,17 @@ string PCB::getStateString(){
   }else{
     return "Terminated";
   }
+}
+
+
+
+/**
+* Funtion: Get process name
+* @returns {string}
+* 
+* @precondition: none
+* @postcondition: none
+*/
+string PCB::getName(){
+  return this->name;
 }

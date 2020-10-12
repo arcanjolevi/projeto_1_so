@@ -2,11 +2,11 @@
 parâmetro1_alg1 //Quantum Round Robin
 1 //ID 1o processo 
 nome //Nome referenciador do 1o processo
-estado //estado do 1o processo
+estimado //Tempo estimado do 1o processo
 2 //ID 2o processo 
 nome //Nome referenciador do 2o processo
-estado //estado do 2o processo
+estimado //Tempo estimado do 2o processo
 ... 
 N //ID do N processo 
 nome //Nome referenciador do N processo
-estado //estado do N processo
+estimado //Tempo estimado do N processo

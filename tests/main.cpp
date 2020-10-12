@@ -9,6 +9,8 @@ using namespace std;
 #include "../include/queue.hpp"
 #include "../include/shortestJobFirst.hpp"
 #include "../include/roundRobin.hpp"
+#include "../include/keyboard.hpp"
+#include "../include/read_file.hpp"
 
 #include <fstream>
 #include <string>
@@ -17,26 +19,10 @@ int main () {
 
   cout << "Test program" << endl << endl << endl;
 
-  PCB a(0, 0, 8);
-  PCB b(1, 0, 4);
-  PCB c(2, 0, 4);
-  PCB d(3, 0, 4);
-
-  Queue * ready = new Queue(a);
-
-  ready->push(b);
-  ready->push(c);
-  ready->push(d);
-
-  RR * algorithm = new RR(ready, 3);
-
-  //SJF * algorithm = new SJF(ready);
+  Queue * readyProcesses = new Queue();
+  double quantum;
   
-  algorithm->run();
-
-  
-  delete(algorithm);
-  algorithm = NULL;
+  bool teste = readFile("files/f1.txt", readyProcesses, &quantum, 0);
 
   cout << "Pressione qualquer tecla para encerrar... "; 
   getchChar();
