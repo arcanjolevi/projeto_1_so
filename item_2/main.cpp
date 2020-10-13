@@ -57,9 +57,10 @@ int main () {
   algorithm1->run();
   delete(algorithm1);
 
+
   //SJF algorithm
   readyProcesses = new Queue();
-  readFile("files/f1.txt", readyProcesses, &quantum, false);
+  readFile("input/" + arquivo , readyProcesses, &quantum, false);
   SJF * algorithm2 = new SJF(readyProcesses);
   algorithm2->run();
   delete(algorithm2);

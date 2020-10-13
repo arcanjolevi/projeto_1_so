@@ -7,16 +7,16 @@ Round Robin
 
 ->Before Start Execution  
  
-    ⇨ List of ready processes(PID): [0, 1, 2, 3]
+    ⇨ List of ready processes(PID): [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
  ════════════════════════════════════════════════════════
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ Process: Firefox, PID: 0, Estimated Time: 10.400000, Remaining Time: 10.400000
+        ⇝ Process: A, PID: 0, Estimated Time: 10.400000, Remaining Time: 10.400000
 
     ⇨ List of ready processes:
-        ⇝ [1, 2, 3]
+        ⇝ [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 
     ⇨ List of terminated processes:
         ⇝ []
@@ -26,10 +26,10 @@ Round Robin
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ Process: Chrome, PID: 1, Estimated Time: 14.100000, Remaining Time: 14.100000
+        ⇝ Process: B, PID: 1, Estimated Time: 14.100000, Remaining Time: 14.100000
 
     ⇨ List of ready processes:
-        ⇝ [2, 3, 0]
+        ⇝ [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0]
 
     ⇨ List of terminated processes:
         ⇝ []
@@ -39,10 +39,10 @@ Round Robin
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ Process: Word, PID: 2, Estimated Time: 16.000000, Remaining Time: 16.000000
+        ⇝ Process: C, PID: 2, Estimated Time: 16.000000, Remaining Time: 16.000000
 
     ⇨ List of ready processes:
-        ⇝ [3, 0, 1]
+        ⇝ [3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 1]
 
     ⇨ List of terminated processes:
         ⇝ []
@@ -52,10 +52,10 @@ Round Robin
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ Process: PDF_Reader, PID: 3, Estimated Time: 18.000000, Remaining Time: 18.000000
+        ⇝ Process: D, PID: 3, Estimated Time: 18.000000, Remaining Time: 18.000000
 
     ⇨ List of ready processes:
-        ⇝ [0, 1, 2]
+        ⇝ [4, 5, 6, 7, 8, 9, 10, 11, 0, 1, 2]
 
     ⇨ List of terminated processes:
         ⇝ []
@@ -65,10 +65,10 @@ Round Robin
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ Process: Firefox, PID: 0, Estimated Time: 10.400000, Remaining Time: 6.400000
+        ⇝ Process: E, PID: 4, Estimated Time: 14.123000, Remaining Time: 14.123000
 
     ⇨ List of ready processes:
-        ⇝ [1, 2, 3]
+        ⇝ [5, 6, 7, 8, 9, 10, 11, 0, 1, 2, 3]
 
     ⇨ List of terminated processes:
         ⇝ []
@@ -78,10 +78,10 @@ Round Robin
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ Process: Chrome, PID: 1, Estimated Time: 14.100000, Remaining Time: 10.100000
+        ⇝ Process: F, PID: 5, Estimated Time: 16.160000, Remaining Time: 16.160000
 
     ⇨ List of ready processes:
-        ⇝ [2, 3, 0]
+        ⇝ [6, 7, 8, 9, 10, 11, 0, 1, 2, 3, 4]
 
     ⇨ List of terminated processes:
         ⇝ []
@@ -91,10 +91,10 @@ Round Robin
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ Process: Word, PID: 2, Estimated Time: 16.000000, Remaining Time: 12.000000
+        ⇝ Process: G, PID: 6, Estimated Time: 6.000000, Remaining Time: 6.000000
 
     ⇨ List of ready processes:
-        ⇝ [3, 0, 1]
+        ⇝ [7, 8, 9, 10, 11, 0, 1, 2, 3, 4, 5]
 
     ⇨ List of terminated processes:
         ⇝ []
@@ -104,23 +104,10 @@ Round Robin
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ Process: PDF_Reader, PID: 3, Estimated Time: 18.000000, Remaining Time: 14.000000
+        ⇝ Process: H, PID: 7, Estimated Time: 2.130000, Remaining Time: 2.130000
 
     ⇨ List of ready processes:
-        ⇝ [0, 1, 2]
-
-    ⇨ List of terminated processes:
-        ⇝ []
-
-
- ════════════════════════════════════════════════════════
-->Execution: 
- 
-    ⇨ Process selected for execution(Running):
-        ⇝ Process: Firefox, PID: 0, Estimated Time: 10.400000, Remaining Time: 2.400000
-
-    ⇨ List of ready processes:
-        ⇝ [1, 2, 3]
+        ⇝ [8, 9, 10, 11, 0, 1, 2, 3, 4, 5, 6]
 
     ⇨ List of terminated processes:
         ⇝ []
@@ -129,141 +116,577 @@ Round Robin
 ════════════════════════════════════════════════════════
 ->Process terminated:
 
-   ⇨ Process: Firefox, PID: 0
+   ⇨ Process: H, PID: 7
+        Estimated Time: 2.130000
+        Remaining Time: 0.000000
+        Response Time: 30.130000
+        Process State: Terminated
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: I, PID: 8, Estimated Time: 6.160000, Remaining Time: 6.160000
+
+    ⇨ List of ready processes:
+        ⇝ [9, 10, 11, 0, 1, 2, 3, 4, 5, 6]
+
+    ⇨ List of terminated processes:
+        ⇝ [7]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: J, PID: 9, Estimated Time: 4.300000, Remaining Time: 4.300000
+
+    ⇨ List of ready processes:
+        ⇝ [10, 11, 0, 1, 2, 3, 4, 5, 6, 8]
+
+    ⇨ List of terminated processes:
+        ⇝ [7]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: k, PID: 10, Estimated Time: 21.150000, Remaining Time: 21.150000
+
+    ⇨ List of ready processes:
+        ⇝ [11, 0, 1, 2, 3, 4, 5, 6, 8, 9]
+
+    ⇨ List of terminated processes:
+        ⇝ [7]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: L, PID: 11, Estimated Time: 18.110000, Remaining Time: 18.110000
+
+    ⇨ List of ready processes:
+        ⇝ [0, 1, 2, 3, 4, 5, 6, 8, 9, 10]
+
+    ⇨ List of terminated processes:
+        ⇝ [7]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: A, PID: 0, Estimated Time: 10.400000, Remaining Time: 6.400000
+
+    ⇨ List of ready processes:
+        ⇝ [1, 2, 3, 4, 5, 6, 8, 9, 10, 11]
+
+    ⇨ List of terminated processes:
+        ⇝ [7]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: B, PID: 1, Estimated Time: 14.100000, Remaining Time: 10.100000
+
+    ⇨ List of ready processes:
+        ⇝ [2, 3, 4, 5, 6, 8, 9, 10, 11, 0]
+
+    ⇨ List of terminated processes:
+        ⇝ [7]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: C, PID: 2, Estimated Time: 16.000000, Remaining Time: 12.000000
+
+    ⇨ List of ready processes:
+        ⇝ [3, 4, 5, 6, 8, 9, 10, 11, 0, 1]
+
+    ⇨ List of terminated processes:
+        ⇝ [7]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: D, PID: 3, Estimated Time: 18.000000, Remaining Time: 14.000000
+
+    ⇨ List of ready processes:
+        ⇝ [4, 5, 6, 8, 9, 10, 11, 0, 1, 2]
+
+    ⇨ List of terminated processes:
+        ⇝ [7]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: E, PID: 4, Estimated Time: 14.123000, Remaining Time: 10.123000
+
+    ⇨ List of ready processes:
+        ⇝ [5, 6, 8, 9, 10, 11, 0, 1, 2, 3]
+
+    ⇨ List of terminated processes:
+        ⇝ [7]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: F, PID: 5, Estimated Time: 16.160000, Remaining Time: 12.160000
+
+    ⇨ List of ready processes:
+        ⇝ [6, 8, 9, 10, 11, 0, 1, 2, 3, 4]
+
+    ⇨ List of terminated processes:
+        ⇝ [7]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: G, PID: 6, Estimated Time: 6.000000, Remaining Time: 2.000000
+
+    ⇨ List of ready processes:
+        ⇝ [8, 9, 10, 11, 0, 1, 2, 3, 4, 5]
+
+    ⇨ List of terminated processes:
+        ⇝ [7]
+
+
+════════════════════════════════════════════════════════
+->Process terminated:
+
+   ⇨ Process: G, PID: 6
+        Estimated Time: 6.000000
+        Remaining Time: 0.000000
+        Response Time: 72.130000
+        Process State: Terminated
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: I, PID: 8, Estimated Time: 6.160000, Remaining Time: 2.160000
+
+    ⇨ List of ready processes:
+        ⇝ [9, 10, 11, 0, 1, 2, 3, 4, 5]
+
+    ⇨ List of terminated processes:
+        ⇝ [7, 6]
+
+
+════════════════════════════════════════════════════════
+->Process terminated:
+
+   ⇨ Process: I, PID: 8
+        Estimated Time: 6.160000
+        Remaining Time: 0.000000
+        Response Time: 74.290000
+        Process State: Terminated
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: J, PID: 9, Estimated Time: 4.300000, Remaining Time: 0.300000
+
+    ⇨ List of ready processes:
+        ⇝ [10, 11, 0, 1, 2, 3, 4, 5]
+
+    ⇨ List of terminated processes:
+        ⇝ [7, 6, 8]
+
+
+════════════════════════════════════════════════════════
+->Process terminated:
+
+   ⇨ Process: J, PID: 9
+        Estimated Time: 4.300000
+        Remaining Time: 0.000000
+        Response Time: 74.590000
+        Process State: Terminated
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: k, PID: 10, Estimated Time: 21.150000, Remaining Time: 17.150000
+
+    ⇨ List of ready processes:
+        ⇝ [11, 0, 1, 2, 3, 4, 5]
+
+    ⇨ List of terminated processes:
+        ⇝ [7, 6, 8, 9]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: L, PID: 11, Estimated Time: 18.110000, Remaining Time: 14.110000
+
+    ⇨ List of ready processes:
+        ⇝ [0, 1, 2, 3, 4, 5, 10]
+
+    ⇨ List of terminated processes:
+        ⇝ [7, 6, 8, 9]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: A, PID: 0, Estimated Time: 10.400000, Remaining Time: 2.400000
+
+    ⇨ List of ready processes:
+        ⇝ [1, 2, 3, 4, 5, 10, 11]
+
+    ⇨ List of terminated processes:
+        ⇝ [7, 6, 8, 9]
+
+
+════════════════════════════════════════════════════════
+->Process terminated:
+
+   ⇨ Process: A, PID: 0
         Estimated Time: 10.400000
         Remaining Time: 0.000000
-        Response Time: 34.400000
+        Response Time: 84.990000
         Process State: Terminated
 
  ════════════════════════════════════════════════════════
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ Process: Chrome, PID: 1, Estimated Time: 14.100000, Remaining Time: 6.100000
+        ⇝ Process: B, PID: 1, Estimated Time: 14.100000, Remaining Time: 6.100000
 
     ⇨ List of ready processes:
-        ⇝ [2, 3]
+        ⇝ [2, 3, 4, 5, 10, 11]
 
     ⇨ List of terminated processes:
-        ⇝ [0]
+        ⇝ [7, 6, 8, 9, 0]
 
 
  ════════════════════════════════════════════════════════
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ Process: Word, PID: 2, Estimated Time: 16.000000, Remaining Time: 8.000000
+        ⇝ Process: C, PID: 2, Estimated Time: 16.000000, Remaining Time: 8.000000
 
     ⇨ List of ready processes:
-        ⇝ [3, 1]
+        ⇝ [3, 4, 5, 10, 11, 1]
 
     ⇨ List of terminated processes:
-        ⇝ [0]
+        ⇝ [7, 6, 8, 9, 0]
 
 
  ════════════════════════════════════════════════════════
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ Process: PDF_Reader, PID: 3, Estimated Time: 18.000000, Remaining Time: 10.000000
+        ⇝ Process: D, PID: 3, Estimated Time: 18.000000, Remaining Time: 10.000000
 
     ⇨ List of ready processes:
-        ⇝ [1, 2]
+        ⇝ [4, 5, 10, 11, 1, 2]
 
     ⇨ List of terminated processes:
-        ⇝ [0]
+        ⇝ [7, 6, 8, 9, 0]
 
 
  ════════════════════════════════════════════════════════
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ Process: Chrome, PID: 1, Estimated Time: 14.100000, Remaining Time: 2.100000
+        ⇝ Process: E, PID: 4, Estimated Time: 14.123000, Remaining Time: 6.123000
 
     ⇨ List of ready processes:
-        ⇝ [2, 3]
+        ⇝ [5, 10, 11, 1, 2, 3]
 
     ⇨ List of terminated processes:
-        ⇝ [0]
+        ⇝ [7, 6, 8, 9, 0]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: F, PID: 5, Estimated Time: 16.160000, Remaining Time: 8.160000
+
+    ⇨ List of ready processes:
+        ⇝ [10, 11, 1, 2, 3, 4]
+
+    ⇨ List of terminated processes:
+        ⇝ [7, 6, 8, 9, 0]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: k, PID: 10, Estimated Time: 21.150000, Remaining Time: 13.150000
+
+    ⇨ List of ready processes:
+        ⇝ [11, 1, 2, 3, 4, 5]
+
+    ⇨ List of terminated processes:
+        ⇝ [7, 6, 8, 9, 0]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: L, PID: 11, Estimated Time: 18.110000, Remaining Time: 10.110000
+
+    ⇨ List of ready processes:
+        ⇝ [1, 2, 3, 4, 5, 10]
+
+    ⇨ List of terminated processes:
+        ⇝ [7, 6, 8, 9, 0]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: B, PID: 1, Estimated Time: 14.100000, Remaining Time: 2.100000
+
+    ⇨ List of ready processes:
+        ⇝ [2, 3, 4, 5, 10, 11]
+
+    ⇨ List of terminated processes:
+        ⇝ [7, 6, 8, 9, 0]
 
 
 ════════════════════════════════════════════════════════
 ->Process terminated:
 
-   ⇨ Process: Chrome, PID: 1
+   ⇨ Process: B, PID: 1
         Estimated Time: 14.100000
         Remaining Time: 0.000000
-        Response Time: 48.500000
+        Response Time: 115.090000
         Process State: Terminated
 
  ════════════════════════════════════════════════════════
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ Process: Word, PID: 2, Estimated Time: 16.000000, Remaining Time: 4.000000
+        ⇝ Process: C, PID: 2, Estimated Time: 16.000000, Remaining Time: 4.000000
 
     ⇨ List of ready processes:
-        ⇝ [3]
+        ⇝ [3, 4, 5, 10, 11]
 
     ⇨ List of terminated processes:
-        ⇝ [0, 1]
+        ⇝ [7, 6, 8, 9, 0, 1]
 
 
  ════════════════════════════════════════════════════════
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ Process: PDF_Reader, PID: 3, Estimated Time: 18.000000, Remaining Time: 6.000000
+        ⇝ Process: D, PID: 3, Estimated Time: 18.000000, Remaining Time: 6.000000
 
     ⇨ List of ready processes:
-        ⇝ [2]
+        ⇝ [4, 5, 10, 11, 2]
 
     ⇨ List of terminated processes:
-        ⇝ [0, 1]
+        ⇝ [7, 6, 8, 9, 0, 1]
 
 
  ════════════════════════════════════════════════════════
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ Process: Word, PID: 2, Estimated Time: 16.000000, Remaining Time: 0.000000
+        ⇝ Process: E, PID: 4, Estimated Time: 14.123000, Remaining Time: 2.123000
 
     ⇨ List of ready processes:
-        ⇝ [3]
+        ⇝ [5, 10, 11, 2, 3]
 
     ⇨ List of terminated processes:
-        ⇝ [0, 1]
+        ⇝ [7, 6, 8, 9, 0, 1]
 
 
 ════════════════════════════════════════════════════════
 ->Process terminated:
 
-   ⇨ Process: Word, PID: 2
-        Estimated Time: 16.000000
+   ⇨ Process: E, PID: 4
+        Estimated Time: 14.123000
         Remaining Time: 0.000000
-        Response Time: 56.500000
+        Response Time: 125.213000
         Process State: Terminated
 
  ════════════════════════════════════════════════════════
 ->Execution: 
  
     ⇨ Process selected for execution(Running):
-        ⇝ Process: PDF_Reader, PID: 3, Estimated Time: 18.000000, Remaining Time: 2.000000
+        ⇝ Process: F, PID: 5, Estimated Time: 16.160000, Remaining Time: 4.160000
+
+    ⇨ List of ready processes:
+        ⇝ [10, 11, 2, 3]
+
+    ⇨ List of terminated processes:
+        ⇝ [7, 6, 8, 9, 0, 1, 4]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: k, PID: 10, Estimated Time: 21.150000, Remaining Time: 9.150000
+
+    ⇨ List of ready processes:
+        ⇝ [11, 2, 3, 5]
+
+    ⇨ List of terminated processes:
+        ⇝ [7, 6, 8, 9, 0, 1, 4]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: L, PID: 11, Estimated Time: 18.110000, Remaining Time: 6.110000
+
+    ⇨ List of ready processes:
+        ⇝ [2, 3, 5, 10]
+
+    ⇨ List of terminated processes:
+        ⇝ [7, 6, 8, 9, 0, 1, 4]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: C, PID: 2, Estimated Time: 16.000000, Remaining Time: 0.000000
+
+    ⇨ List of ready processes:
+        ⇝ [3, 5, 10, 11]
+
+    ⇨ List of terminated processes:
+        ⇝ [7, 6, 8, 9, 0, 1, 4]
+
+
+════════════════════════════════════════════════════════
+->Process terminated:
+
+   ⇨ Process: C, PID: 2
+        Estimated Time: 16.000000
+        Remaining Time: 0.000000
+        Response Time: 137.213000
+        Process State: Terminated
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: D, PID: 3, Estimated Time: 18.000000, Remaining Time: 2.000000
+
+    ⇨ List of ready processes:
+        ⇝ [5, 10, 11]
+
+    ⇨ List of terminated processes:
+        ⇝ [7, 6, 8, 9, 0, 1, 4, 2]
+
+
+════════════════════════════════════════════════════════
+->Process terminated:
+
+   ⇨ Process: D, PID: 3
+        Estimated Time: 18.000000
+        Remaining Time: 0.000000
+        Response Time: 139.213000
+        Process State: Terminated
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: F, PID: 5, Estimated Time: 16.160000, Remaining Time: 0.160000
+
+    ⇨ List of ready processes:
+        ⇝ [10, 11]
+
+    ⇨ List of terminated processes:
+        ⇝ [7, 6, 8, 9, 0, 1, 4, 2, 3]
+
+
+════════════════════════════════════════════════════════
+->Process terminated:
+
+   ⇨ Process: F, PID: 5
+        Estimated Time: 16.160000
+        Remaining Time: 0.000000
+        Response Time: 139.373000
+        Process State: Terminated
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: k, PID: 10, Estimated Time: 21.150000, Remaining Time: 5.150000
+
+    ⇨ List of ready processes:
+        ⇝ [11]
+
+    ⇨ List of terminated processes:
+        ⇝ [7, 6, 8, 9, 0, 1, 4, 2, 3, 5]
+
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: L, PID: 11, Estimated Time: 18.110000, Remaining Time: 2.110000
+
+    ⇨ List of ready processes:
+        ⇝ [10]
+
+    ⇨ List of terminated processes:
+        ⇝ [7, 6, 8, 9, 0, 1, 4, 2, 3, 5]
+
+
+════════════════════════════════════════════════════════
+->Process terminated:
+
+   ⇨ Process: L, PID: 11
+        Estimated Time: 18.110000
+        Remaining Time: 0.000000
+        Response Time: 145.483000
+        Process State: Terminated
+
+ ════════════════════════════════════════════════════════
+->Execution: 
+ 
+    ⇨ Process selected for execution(Running):
+        ⇝ Process: k, PID: 10, Estimated Time: 21.150000, Remaining Time: 1.150000
 
     ⇨ List of ready processes:
         ⇝ []
 
     ⇨ List of terminated processes:
-        ⇝ [0, 1, 2]
+        ⇝ [7, 6, 8, 9, 0, 1, 4, 2, 3, 5, 11]
 
 
 ════════════════════════════════════════════════════════
 ->Process terminated:
 
-   ⇨ Process: PDF_Reader, PID: 3
-        Estimated Time: 18.000000
+   ⇨ Process: k, PID: 10
+        Estimated Time: 21.150000
         Remaining Time: 0.000000
-        Response Time: 58.500000
+        Response Time: 146.633000
         Process State: Terminated
 ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
 
@@ -273,9 +696,9 @@ Round Robin
         ⇝ []
 
     ⇨ List of terminated processes:
-        ⇝ [0, 1, 2, 3]
+        ⇝ [7, 6, 8, 9, 0, 1, 4, 2, 3, 5, 11, 10]
 
-    ⇨ Average response time:49.475000
+    ⇨ Average response time:107.029000
 
-    ⇨ Context changes:16
+    ⇨ Context changes:43
 
