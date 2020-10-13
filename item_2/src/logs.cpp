@@ -1,7 +1,7 @@
 #include "../include/logs.hpp"
 
 /**
- * Funtion: Print log in the log file
+ * Function: Print log in the log file
  * @param {string} log message
  * @returns {void}
  * 

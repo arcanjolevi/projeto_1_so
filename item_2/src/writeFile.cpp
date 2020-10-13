@@ -1,7 +1,7 @@
 #include "../include/writeFile.hpp"
 
 /**
- * Funtion: Clear file for output
+ * Function: Clear file for output
  * @returns {void}
  * 
  * @precondition: none
@@ -17,7 +17,7 @@ void clearOutputFileRR(){
 
 
 /**
- * Funtion: Clear file for output
+ * Function: Clear file for output
  * @returns {void}
  * 
  * @precondition: none
@@ -33,7 +33,7 @@ void clearOutputFileSJF(){
 
 
 /**
- * Funtion: Print output in the RR file
+ * Function: Print output in the RR file
  * @param {string} Data
  * @returns {void}
  * 
@@ -49,7 +49,7 @@ void roundRobinOutput(string _string){
 }
 
 /**
- * Funtion: Print output in the RR file
+ * Function: Print output in the RR file
  * @param {string} Data
  * @returns {void}
  * 
@@ -66,7 +66,7 @@ void sjfOutput(string _string){
 
 
 /**
- * Funtion: Print header in the RR file
+ * Function: Print header in the RR file
  * @param {string} Data
  * @returns {void}
  * 
@@ -82,7 +82,7 @@ void printFileHeaderRR(string readyList, double quantum){
 
 
 /**
- * Funtion: Print output in the SJF file
+ * Function: Print output in the SJF file
  * @param {string} Data
  * @returns {void}
  * 
@@ -97,7 +97,7 @@ void printFileHeaderSJF(string readyList){
 }
 
 /**
- * Funtion: Print execution data in the output file
+ * Function: Print execution data in the output file
  * @param {process*} Running process
  * @returns {void}
  * 
@@ -115,7 +115,7 @@ void printExecutionRR(PCB * process){
 }
 
 /**
- * Funtion: Print algorithm info in the output file
+ * Function: Print algorithm info in the output file
  * @param {string} Algorithm ready processes list
  * @param {string} Algorithm terminated processes list
  * @returns {void}
@@ -131,7 +131,7 @@ void printAlgorithmInfoRR(string readyList, string terminatedList){
 }
 
 /**
- * Funtion: Print the process terminated data in the output file
+ * Function: Print the process terminated data in the output file
  * @param {PCB} Terminated process
  * @param {double} process resposne time
  * @returns {void}
@@ -150,7 +150,7 @@ void printProcessTerminatedRR(PCB * process, double responseTime){
 }
 
 /**
- * Funtion: Print execution data in the output file
+ * Function: Print execution data in the output file
  * @param {string} Algorithm ready processes list
  * @param {string} Algorithm terminated processes list
  * @param {double} average response time
@@ -179,7 +179,7 @@ void printExecutionEndRR(string readyList, string terminatedList, double average
 
 
 /**
- * Funtion: Print execution data in the output file
+ * Function: Print execution data in the output file
  * @param {process*} Running process
  * @returns {void}
  * 
@@ -197,7 +197,7 @@ void printExecutionSJF(PCB * process){
 }
 
 /**
- * Funtion: Print algorithm info in the output file
+ * Function: Print algorithm info in the output file
  * @param {string} Algorithm ready processes list
  * @param {string} Algorithm terminated processes list
  * @returns {void}
@@ -213,7 +213,7 @@ void printAlgorithmInfoSJF(string readyList, string terminatedList){
 }
 
 /**
- * Funtion: Print the process terminated data int the output file
+ * Function: Print the process terminated data int the output file
  * @param {PCB} Terminated process
  * @param {double} process resposne time
  * @returns {void}
@@ -232,7 +232,7 @@ void printProcessTerminatedSJF(PCB * process, double responseTime){
 }
 
 /**
- * Funtion: Print execution data in the output file
+ * Function: Print execution data in the output file
  * @param {string} Algorithm ready processes list
  * @param {string} Algorithm terminated processes list
  * @param {double} average response time

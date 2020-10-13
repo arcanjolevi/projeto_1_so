@@ -10,7 +10,7 @@
 using namespace std;
 
 /**
- * Funtion: Clear file for output
+ * Function: Clear file for output
  * @returns {void}
  * 
  * @precondition: none
@@ -19,7 +19,7 @@ using namespace std;
 void clearOutputFileRR();
 
 /**
- * Funtion: Clear file for output
+ * Function: Clear file for output
  * @returns {void}
  * 
  * @precondition: none
@@ -28,7 +28,7 @@ void clearOutputFileRR();
 void clearOutputFileSJF();
 
 /**
- * Funtion: Print output in the RR file
+ * Function: Print output in the RR file
  * @param {string} Data
  * @returns {void}
  * 
@@ -38,7 +38,7 @@ void clearOutputFileSJF();
 void roundRobinOutput(string _string);
 
 /**
- * Funtion: Print output in the SJF file
+ * Function: Print output in the SJF file
  * @param {string} Data
  * @returns {void}
  * 
@@ -48,7 +48,7 @@ void roundRobinOutput(string _string);
 void SJFOutput(string _string);
 
 /**
- * Funtion: Print output in the RR file
+ * Function: Print output in the RR file
  * @param {string} Data
  * @returns {void}
  * 
@@ -58,7 +58,7 @@ void SJFOutput(string _string);
 void printFileHeaderRR(string readyList, double quantum);
 
 /**
- * Funtion: Print output in the SJF file
+ * Function: Print output in the SJF file
  * @param {string} Data
  * @returns {void}
  * 
@@ -68,7 +68,7 @@ void printFileHeaderRR(string readyList, double quantum);
 void printFileHeaderSJF(string readyList);
 
 /**
- * Funtion: Print execution data in the output file
+ * Function: Print execution data in the output file
  * @param {process*} Running process
  * @returns {void}
  * 
@@ -78,7 +78,7 @@ void printFileHeaderSJF(string readyList);
 void printExecutionRR(PCB * process);
 
 /**
- * Funtion: Print algorithm info in the output file
+ * Function: Print algorithm info in the output file
  * @param {string} Algorithm ready processes list
  * @param {string} Algorithm terminated processes list
  * @returns {void}
@@ -89,7 +89,7 @@ void printExecutionRR(PCB * process);
 void printAlgorithmInfoRR(string readyList, string terminatedList);
 
 /**
- * Funtion: Print the process terminated data in the output file
+ * Function: Print the process terminated data in the output file
  * @param {PCB} Terminated process
  * @param {double} process resposne time
  * @returns {void}
@@ -100,7 +100,7 @@ void printAlgorithmInfoRR(string readyList, string terminatedList);
 void printProcessTerminatedRR(PCB * process, double responseTime);
 
 /**
- * Funtion: Print execution data int the output file
+ * Function: Print execution data int the output file
  * @param {string} Algorithm ready processes list
  * @param {string} Algorithm terminated processes list
  * @param {double} average response time
@@ -115,7 +115,7 @@ void printExecutionEndRR(string readyList, string terminatedList, double average
 
 
 /**
- * Funtion: Print execution data in the output file
+ * Function: Print execution data in the output file
  * @param {process*} Running process
  * @returns {void}
  * 
@@ -125,7 +125,7 @@ void printExecutionEndRR(string readyList, string terminatedList, double average
 void printExecutionSJF(PCB * process);
 
 /**
- * Funtion: Print algorithm info in the output file
+ * Function: Print algorithm info in the output file
  * @param {string} Algorithm ready processes list
  * @param {string} Algorithm terminated processes list
  * @returns {void}
@@ -136,7 +136,7 @@ void printExecutionSJF(PCB * process);
 void printAlgorithmInfoSJF(string readyList, string terminatedList);
 
 /**
- * Funtion: Print the process terminated data int the output file
+ * Function: Print the process terminated data int the output file
  * @param {PCB} Terminated process
  * @param {double} process resposne time
  * @returns {void}
@@ -147,7 +147,7 @@ void printAlgorithmInfoSJF(string readyList, string terminatedList);
 void printProcessTerminatedSJF(PCB * process, double responseTime);
 
 /**
- * Funtion: Print execution data in the output file
+ * Function: Print execution data in the output file
  * @param {string} Algorithm ready processes list
  * @param {string} Algorithm terminated processes list
  * @param {double} average response time

@@ -26,7 +26,7 @@ class PCB {
   public:
 
   /**
-  * Funtion: Process control block contructor
+  * Function: Process control block contructor
   * @param {int} - Process ID
   * @param {string} - Process name
   * @returns {PCB} - PCB instance
@@ -37,7 +37,7 @@ class PCB {
   PCB(int _PID, string _name);
 
   /**
-  * Funtion: Process control block contructor
+  * Function: Process control block contructor
   * @param {int} - Process ID
   * @param {string} - Process Name
   * @param {double} - estimatedTime
@@ -49,7 +49,7 @@ class PCB {
   PCB(int _PID, string _name, double _estimatedTime);
 
   /**
-  * Funtion: Process control block contructor
+  * Function: Process control block contructor
   * @returns {PCB} - PCB instance
   * 
   * @precondition: none
@@ -58,7 +58,7 @@ class PCB {
   PCB();
 
   /**
-  * Funtion: Set all data of PCB base in other PCB
+  * Function: Set all data of PCB base in other PCB
   * @param {PCB} - Process control block
   * @returns {void}
   * 
@@ -68,7 +68,7 @@ class PCB {
   void setPCB(PCB _other);
 
   /**
-  * Funtion: Change the process state
+  * Function: Change the process state
   * @param {State} - Process state
   * @returns {bool} if opration performed then true else false
   * 
@@ -78,7 +78,7 @@ class PCB {
   bool setState(State _state);
 
   /**
-  * Funtion: get the current state od the process
+  * Function: get the current state od the process
   * @returns {State} - Current state of the process
   * 
   * @precondition: none
@@ -87,7 +87,7 @@ class PCB {
   State getState();
 
   /**
-  * Funtion: get the current state of the process
+  * Function: get the current state of the process
   * @returns {string} - Current state of the process
   * 
   * @precondition: none
@@ -96,7 +96,7 @@ class PCB {
   string getStateString();
 
   /**
-  * Funtion: Print the current data of PCB
+  * Function: Print the current data of PCB
   * @returns {void}
   * 
   * @precondition: none
@@ -105,7 +105,7 @@ class PCB {
   void show();
 
   /**
-  * Funtion: PCB desctructor
+  * Function: PCB desctructor
   * @returns {void}
   * 
   * @precondition: none
@@ -114,7 +114,7 @@ class PCB {
   ~PCB();
 
   /**
-  * Funtion: Change the next PCB
+  * Function: Change the next PCB
   * @param {PCB*} - adress of the next PCB || NULL
   * @returns {void}
   * 
@@ -124,7 +124,7 @@ class PCB {
   void setNext(PCB * _next);
 
   /**
-  * Funtion: Get the next PCB adress
+  * Function: Get the next PCB adress
   * @returns {PCB*}
   * 
   * @precondition: none
@@ -133,7 +133,7 @@ class PCB {
   PCB * getNext();
 
   /**
-  * Funtion: Get the PID
+  * Function: Get the PID
   * @returns {int}
   * 
   * @precondition: none
@@ -142,7 +142,7 @@ class PCB {
   int getPID();
 
   /**
-  * Funtion: Get the remainingTime
+  * Function: Get the remainingTime
   * @returns {double}
   * 
   * @precondition: none
@@ -151,7 +151,7 @@ class PCB {
   double getRemainingTime();
 
   /**
-  * Funtion: Set the remainingTime
+  * Function: Set the remainingTime
   * @param {double}
   * @returns {void}
   * 
@@ -161,7 +161,7 @@ class PCB {
   void setRemainingTime(double _remainingTime);
 
   /**
-  * Funtion: Get the estimated time
+  * Function: Get the estimated time
   * @returns {double}
   * 
   * @precondition: none
@@ -170,7 +170,7 @@ class PCB {
   double getEstimatedTime();
 
   /**
-  * Funtion: Get process name
+  * Function: Get process name
   * @returns {string}
   * 
   * @precondition: none
@@ -179,7 +179,7 @@ class PCB {
   string getName();
 
   /**
-  * Funtion: Simulate the process execution
+  * Function: Simulate the process execution
   * @param {double} - Quantum available for execution
   * @returns {double} - if the process execute throughout all quantum return 0, else return the remaining time of the quantum
   * 

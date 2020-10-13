@@ -1,7 +1,7 @@
 #include "../include/processControlBlock.hpp"
 
 /**
-* Funtion: Process control block contructor
+* Function: Process control block contructor
 * @param {int} - Process ID
 * @param {string} - Process name
 * @returns {PCB} - PCB instance
@@ -19,7 +19,7 @@ PCB::PCB(int _PID, string _name){
 }
 
 /**
-* Funtion: Process control block contructor
+* Function: Process control block contructor
 * @param {int} - Process ID
 * @param {string} - Process name
 * @param {double} - estimatedTime
@@ -40,7 +40,7 @@ PCB::PCB(int _PID, string _name, double _estimatedTime){
 
 
 /**
-* Funtion: Process control block contructor
+* Function: Process control block contructor
 * @returns {PCB} - PCB instance
 * 
 * @precondition: none
@@ -53,7 +53,7 @@ PCB::PCB(){
 }
 
 /**
-* Funtion: Set all data of PCB base in other PCB
+* Function: Set all data of PCB base in other PCB
 * @param {PCB} - Process control block
 * @returns {void}
 * 
@@ -71,7 +71,7 @@ void PCB::setPCB(PCB _other){
 }
 
 /**
-* Funtion: Change the process state
+* Function: Change the process state
 * @param {State} - Process state
 * @returns {bool} if opration performed then true else false
 * 
@@ -90,7 +90,7 @@ bool PCB::setState(State _state){
 
 
 /**
-* Funtion: get the current state od the process
+* Function: get the current state od the process
 * @returns {State} - Current state of the process
 * 
 * @precondition: none
@@ -102,7 +102,7 @@ State PCB::getState(){
 
 
 /**
-* Funtion: Print the current data of PCB
+* Function: Print the current data of PCB
 * @returns {void}
 * 
 * @precondition: none
@@ -129,7 +129,7 @@ void PCB::show(){
 
 
 /**
-* Funtion: PCB desctructor
+* Function: PCB desctructor
 * @returns {void}
 * 
 * @precondition: none
@@ -142,7 +142,7 @@ PCB::~PCB(){
 
 
 /**
-* Funtion: Change the next PCB
+* Function: Change the next PCB
 * @param {*PCB} - adress of the next PCB || NULL
 * @returns {void}
 * 
@@ -155,7 +155,7 @@ void PCB::setNext(PCB * _next){
 
 
 /**
-* Funtion: Change the next PCB
+* Function: Change the next PCB
 * @param {*PCB} - adress of the next PCB || NULL
 * @returns {void}
 * 
@@ -168,7 +168,7 @@ PCB * PCB::getNext(){
 
 
 /**
-* Funtion: Get the PID
+* Function: Get the PID
 * @returns {int}
 * 
 * @precondition: none
@@ -180,7 +180,7 @@ int PCB::getPID(){
 
 
 /**
-* Funtion: Get the estimated time
+* Function: Get the estimated time
 * @returns {double}
 * 
 * @precondition: none
@@ -192,7 +192,7 @@ double PCB::getEstimatedTime(){
 
 
 /**
-* Funtion: Get the remainingTime
+* Function: Get the remainingTime
 * @returns {double}
 * 
 * @precondition: none
@@ -204,7 +204,7 @@ double PCB::getRemainingTime(){
 
 
 /**
-* Funtion: Set the remainingTime
+* Function: Set the remainingTime
 * @param {double}
 * @returns {void}
 * 
@@ -218,7 +218,7 @@ void PCB::setRemainingTime(double _remainingTime){
 
 
 /**
-* Funtion: Simulate the process execution
+* Function: Simulate the process execution
 * @param {double} - Quantum available for execution
 * @returns {double} - Return the remaining time of the quantum
 * 
@@ -244,7 +244,7 @@ double PCB::execute(double _quantum){
 
 
 /**
-* Funtion: get the current state of the process
+* Function: get the current state of the process
 * @returns {string} - Current state of the process
 * 
 * @precondition: none
@@ -263,7 +263,7 @@ string PCB::getStateString(){
 
 
 /**
-* Funtion: Get process name
+* Function: Get process name
 * @returns {string}
 * 
 * @precondition: none
