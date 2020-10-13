@@ -14,18 +14,20 @@
 \usepackage{fancyhdr}
 \usepackage{colortbl}
 \usepackage{framed}
+\usepackage{multicol}
 
 %% Definindo o Autor e o título
 \author{Victor Emanuel Almeida \and Levi Cícero Arcanjo}
-\title{Simulação e algorítimo de semáforos, para o problema ``Leitores e escritores''}
+\title{Simulação e algorítimos de semáforo, para o problema ``Leitores e escritores''}
 
 %% Estilo da página
 \pagestyle{fancy}
-\fancyhead[L]{}
-\fancyhead[R]{}
-\fancyfoot[L]{}
+\fancyhead[L]{Item 3~-~Projeto I}
+\fancyhead[C]{}
+\fancyhead[R]{Sistemas Operacionais}
+\fancyfoot[L]{Outubro~-~2020}
 \fancyfoot[C]{}
-\fancyfoot[R]{}
+\fancyfoot[R]{-~\thepage~-}
 \renewcommand{\headrulewidth}{0.7pt}
 \renewcommand{\footrulewidth}{0.3pt}
 
@@ -33,10 +35,15 @@
 {\Large\bfseries}
 {\thesection}
 {.5cm}
-{}[\titlerule]
+{}
+
+\pretitle{\vfill\begin{center}\LARGE}
+\postdate{\end{center}\vfill}
 
 \begin{document}
-\maketitle\thispagestyle{fancy}
+\begin{titlepage}
+\maketitle\thispagestyle{empty}
+\end{titlepage}
 
 \section{Algorítimo}
 
@@ -44,38 +51,45 @@ Segue abaixo a implementação de um algorítimo para a resolução
 
 \begin{figure}[!htb]
 	\centering
-	\caption{\label{fig:1.png} Criação das variáveis e inicializações}
 	\includegraphics[keepaspectratio]{1.png}
+	\caption{\label{fig:1.png} Criação das variáveis e inicializações}
 \end{figure}
-
-\clearpage
+Nesse primeiro trecho de código, temos a criação e inicialização das variáveis, tanto a variável que armazena o número de leitores ativos, quanto os semáforos A e B, que tem função de proteger a variável ``n\underline{ }readers'' e impedir a escrita enquanto alguém estiver lendo ou escrevendo respectivamente.\\
 
 \begin{figure}[!htb]
 	\centering
-	\caption{\label{fig:2.png} Implementação do up e down}
-	\includegraphics[keepaspectratio]{2.png}
+	\includegraphics[keepaspectratio, scale=.83]{2.png}
+	\caption{\label{fig:2.png} Implementação das funções up e down}
 \end{figure}
+
+\begin{itemize}
+	\item Função down: Mantém o processo em uma espera ocupada enquanto a variável do semáforo é igual a zero, caso contrário a decrementa.
+	\item Função up: incrementa o valor do semáforo caso seja possível.
+\end{itemize}
 
 \begin{figure}[!htb]
 	\centering
+	\includegraphics[keepaspectratio, scale=1.2]{3.png}
 	\caption{\label{fig:3.png} Implementação do escritor}
-	\includegraphics[keepaspectratio, scale=1.4]{3.png}
 \end{figure}
 
-\clearpage
+Como podemos ver na figura acima o escritor espera até ser possível realizar o down(), quando concluído ele pode realizar a escrita, pois não existe nenhum outro processo lendo nem escrevendo.
 
 \begin{figure}[!htb]
 	\centering
-	\caption{\label{fig:4.png}Implementação do leitor}
 	\includegraphics[keepaspectratio]{4.png}
+	\caption{\label{fig:4.png}Implementação do leitor}
 \end{figure}
 
+Por fim temos a implementação do leitor, o qual utiliza dois semáforos, sendo o A para modificar a variável ``n\underline{ }readers'', e o B para leitura.
 
 \section{Simulação}
 
 Agora vamos realizar a simulação do algorítimo supracitado, com os seguintes dados:
 
+\begin{multicols}{2}
 \begin{itemize}
+\footnotesize
 	\item Tempo de criação:
 	\begin{itemize}
 			\item leitor 1 = momento 10
@@ -84,7 +98,6 @@ Agora vamos realizar a simulação do algorítimo supracitado, com os seguintes 
 			\item escritor 1 = momento 14
 			\item escritor 2 = momento 9
 	\end{itemize}
-	\clearpage
 	\item Tempo de execução:
 		\begin{itemize}
 			\item leitor 1 = momento 8
@@ -94,10 +107,11 @@ Agora vamos realizar a simulação do algorítimo supracitado, com os seguintes 
 			\item escritor 2 = momento 5
 		\end{itemize}
 \end{itemize}
+\end{multicols}
 	 
 \begin{figure*}[!htb]
 	\centering
+	\includegraphics[keepaspectratio, width=.97\textwidth]{tabela.jpeg}
 	\caption{\label{fig:tabela.pdf} Simulação do algorítimo}
-	\includegraphics[keepaspectratio, width=\textwidth]{tabela.jpeg}
 \end{figure*}
 \end{document}
