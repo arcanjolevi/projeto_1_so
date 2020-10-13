@@ -5,7 +5,7 @@ public class Counter {
 	
 	/**
 	* Function: Increment the counter value
-	* @returns {void}
+	* @return {void}
 	* 
 	* @precondition: none
 	* @postcondition: Counter incremented
@@ -16,7 +16,7 @@ public class Counter {
 	
 	/**
 	* Function: Returns the value of the counter
-	* @returns {int} counter value
+	* @return {int} counter value
 	* 
 	* @precondition: none
 	* @postcondition: none

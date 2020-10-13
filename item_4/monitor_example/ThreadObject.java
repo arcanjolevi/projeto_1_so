@@ -10,7 +10,7 @@ public class ThreadObject implements Runnable {
 	* Function: Constructor of the ThreadObject class
 	* @param {Counter} - Reference to a counter
 	* @param {String} - Thread name
-	* @returns {Process} counter value
+	* @return {Process} counter value
 	* 
 	* @precondition: none
 	* @postcondition: none
@@ -22,7 +22,7 @@ public class ThreadObject implements Runnable {
 	
 	/**
 	* Function: Run method - Actions that will be run when thread starts
-	* @returns {void} 
+	* @return {void} 
 	* 
 	* @precondition: none
 	* @postcondition: none
@@ -36,7 +36,7 @@ public class ThreadObject implements Runnable {
 	
 	/**
 	* Function: Method that will be start the thread
-	* @returns {void} 
+	* @return {void} 
 	* 
 	* @precondition: none
 	* @postcondition: thread started

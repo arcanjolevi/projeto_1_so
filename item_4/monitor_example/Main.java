@@ -5,7 +5,7 @@ public class Main {
 	/**
 	* Function: Main Function of the program
 	* @param {String[]} - Args
-	* @returns {void}
+	* @return {void}
 	* 
 	* @precondition: none
 	* @postcondition: none
