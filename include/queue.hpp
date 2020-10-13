@@ -18,7 +18,7 @@ class Queue {
   public:
 
   /**
-  * Funtion: Queue contructor
+  * Function: Queue contructor
   * @param {PCB} - Process control block
   * @returns {Queue} - Queue instance
   * 
@@ -28,7 +28,7 @@ class Queue {
   Queue(PCB _newPCB);
 
   /**
-  * Funtion: Queue contructor
+  * Function: Queue contructor
   * @param {PCB} - Process control block
   * @returns {Queue} - Queue instance
   * 
@@ -38,7 +38,7 @@ class Queue {
   Queue(){}
 
   /**
-  * Funtion: Queue destructor
+  * Function: Queue destructor
   * @returns {void}
   * 
   * @precondition: none
@@ -47,7 +47,7 @@ class Queue {
   ~Queue();
 
   /**
-  * Funtion: Push a PCB in to the queue
+  * Function: Push a PCB in to the queue
   * @param {PCB} - Process control block
   * @returns {bool} if opration performed then true else false
   * 
@@ -57,7 +57,7 @@ class Queue {
   bool push(PCB _newPCB);
 
   /**
-  * Funtion: Push a PCB in to the queue in order
+  * Function: Push a PCB in to the queue in order
   * @param {PCB} - Process control block
   * @returns {bool} if opration performed then true else false
   * 
@@ -67,7 +67,7 @@ class Queue {
   bool pushInOrder(PCB _newPCB);
 
   /**
-  * Funtion: Pop a PCB from queue
+  * Function: Pop a PCB from queue
   * @returns {PCB} a PCH if queue is not empty
   * 
   * @precondition: Queue not empty
@@ -76,7 +76,7 @@ class Queue {
   PCB pop();
 
   /**
-  * Funtion: Check if the queue is empty
+  * Function: Check if the queue is empty
   * @returns {Bool} if empty then true else false
   * 
   * @precondition: none
@@ -85,7 +85,7 @@ class Queue {
   bool isEmpty();
 
   /**
-  * Funtion: Change the head
+  * Function: Change the head
   * @param {PCB*} - adress of the next PCB || NULL
   * @returns {void}
   * 
@@ -95,7 +95,7 @@ class Queue {
   void setHead(PCB * _head);
 
   /**
-  * Funtion: Get the head
+  * Function: Get the head
   * @returns {PCB*}
   * 
   * @precondition: none
@@ -104,7 +104,7 @@ class Queue {
   PCB * getHead();
 
   /**
-  * Funtion: Change the tails
+  * Function: Change the tails
   * @param {PCB*} - adress of the PCB || NULL
   * @returns {void}
   * 
@@ -114,7 +114,7 @@ class Queue {
   void setTail(PCB * _tail);
 
   /**
-  * Funtion: Get the tail
+  * Function: Get the tail
   * @returns {PCB*}
   * 
   * @precondition: none
@@ -123,7 +123,7 @@ class Queue {
   PCB * getTail();
 
   /**
-  * Funtion: Print in to the log file the queue content
+  * Function: Print in to the log file the queue content
   * @returns {void}
   * 
   * @precondition: none
@@ -132,7 +132,7 @@ class Queue {
   void show();
 
   /**
-  * Funtion: return queue content in string
+  * Function: return queue content in string
   * @returns {string} queue elements
   * 
   * @precondition: none
@@ -141,7 +141,7 @@ class Queue {
   string queueToString();
 
   /**
-  * Funtion: Get size
+  * Function: Get size
   * @returns {int}
   * 
   * @precondition: none

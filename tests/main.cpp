@@ -22,6 +22,11 @@ int main () {
   getchChar();
   system("clear");
 
+  getchChar();
+
+  system("ls input/");
+
+  /*
   Queue * readyProcesses = new Queue();
   double quantum;
   
@@ -44,7 +49,7 @@ int main () {
 
   delete(algorithm2);
 
-
+  */
   cout << "Pressione qualquer tecla para encerrar... "; 
   getchChar();
   system("clear");

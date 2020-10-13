@@ -1,7 +1,7 @@
 #include "../include/example.hpp"
 
 /**
- * Funtion: function description here.
+ * Function: function description here.
  * @param {void}
  * @returns returns description here
  */
@@ -13,7 +13,7 @@ char functionWithoutParams(){
 }
 
 /**
- * Funtion: function description here.
+ * Function: function description here.
  * @param {n} - description of the param
  * @param {n} - description of the param
  * @returns {void}

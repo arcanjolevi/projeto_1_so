@@ -63,7 +63,7 @@ string readName (ifstream &fn);
 double readTime (ifstream &fn);
 
 /**
- * Funtion: controls file reading
+ * Function: controls file reading
  * @param {file_name} - the name or path associated with a file
  * @param {readyProcesses} - the linked list of all ready processes
  * @param {quantum} - a pointer to the duration of a quantum

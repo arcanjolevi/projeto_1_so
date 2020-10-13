@@ -19,7 +19,7 @@ class RR{
   public:
 Queue * terminated;
   /**
-  * Funtion: RR contructor
+  * Function: RR contructor
   * @param {Queue} - Ready process queue
   * @returns {SJF} - RR instance
   * 
@@ -29,7 +29,7 @@ Queue * terminated;
   RR(Queue * _ready, double _quantum);
 
   /**
-  * Funtion: RR destructor
+  * Function: RR destructor
   * @returns {void}
   * 
   * @precondition: none
@@ -38,7 +38,7 @@ Queue * terminated;
   ~RR();
 
   /**
-  * Funtion: Run ready processes
+  * Function: Run ready processes
   * @returns {void}
   * 
   * @precondition: none

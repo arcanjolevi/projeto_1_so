@@ -9,7 +9,7 @@
 using namespace std;
 
 /**
- * Funtion: Print log in the log file
+ * Function: Print log in the log file
  * @param {string} log message
  * @returns {void}
  * 

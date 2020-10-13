@@ -7,7 +7,7 @@ using namespace std;
 #include <termios.h>
 
 /**
- * Funtion: Read and return a character without the need for enter.
+ * Function: Read and return a character without the need for enter.
  * @param {void}
  * @returns A read char
  */

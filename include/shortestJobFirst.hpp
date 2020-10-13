@@ -17,7 +17,7 @@ class SJF{
   public:
 
   /**
-  * Funtion: SJF contructor
+  * Function: SJF contructor
   * @param {Queue} - Ready process queue
   * @returns {SJF} - SJF instance
   * 
@@ -27,7 +27,7 @@ class SJF{
   SJF(Queue * _ready);
 
   /**
-  * Funtion: SJF destructor
+  * Function: SJF destructor
   * @returns {void}
   * 
   * @precondition: none
@@ -36,7 +36,7 @@ class SJF{
   ~SJF();
 
   /**
-  * Funtion: Run ready processes
+  * Function: Run ready processes
   * @returns {void}
   * 
   * @precondition: none
