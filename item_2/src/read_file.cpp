@@ -83,7 +83,7 @@ double readTime (ifstream &fn){
 	char delimitator = 'v';
 	double aux;
 	fn >> aux;
-	while( delimitator != '\n') fn.get(delimitator);
+	while( delimitator != '\n' && delimitator != fn.eof()) fn.get(delimitator);
 	return aux;
 }
 
