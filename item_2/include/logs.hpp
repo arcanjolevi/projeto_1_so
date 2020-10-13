@@ -18,5 +18,14 @@ using namespace std;
  */
 void log(string _log);
 
+/**
+ * Function: Clear logs file
+ * @returns {void}
+ * 
+ * @precondition: none
+ * @postcondition: Logs file cleared
+ */
+void clearLogsFile();
+
 
 #endif

@@ -15,3 +15,18 @@ void log(string _log){
   myfile << ctime(&timenow) << _log << "\n-------------------------------------\n";
   myfile.close();
 }
+
+/**
+ * Function: Clear logs file
+ * @returns {void}
+ * 
+ * @precondition: none
+ * @postcondition: Logs file cleared
+ */
+void clearLogsFile(){
+  ofstream myfile;
+  auto timenow = chrono::system_clock::to_time_t(chrono::system_clock::now()); 
+  myfile.open ("logs/logFile.txt");
+  myfile << ctime(&timenow) << "Logs File: "<< "\n-------------------------------------\n";
+  myfile.close();
+}

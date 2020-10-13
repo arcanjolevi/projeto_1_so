@@ -21,34 +21,6 @@ int main () {
   getchChar();
   system("clear");
 
-  getchChar();
-
-  system("ls input/");
-
-  /*
-  Queue * readyProcesses = new Queue();
-  double quantum;
-  
-  readFile("files/f1.txt", readyProcesses, &quantum, true);
-
-  RR * algorithm1 = new RR(readyProcesses, quantum);
-
-  algorithm1->run();
-
-  delete(algorithm1);
-
-
-  readyProcesses = new Queue();
-
-  readFile("files/f1.txt", readyProcesses, &quantum, false);
-
-  SJF * algorithm2 = new SJF(readyProcesses);
-
-  algorithm2->run();
-
-  delete(algorithm2);
-
-  */
   cout << "Pressione qualquer tecla para encerrar... "; 
   getchChar();
   system("clear");

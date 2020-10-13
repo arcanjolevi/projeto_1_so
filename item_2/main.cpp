@@ -25,6 +25,8 @@ string getFileName(){
 
 int main () {
 
+  clearLogsFile();
+
   string arquivo;
   Queue * readyProcesses = new Queue();
   bool readFileOk = false;
