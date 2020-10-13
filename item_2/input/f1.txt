@@ -3,8 +3,6 @@
 0
 termite
 15.785
-2
 1
 firefox
 2.5
-5
