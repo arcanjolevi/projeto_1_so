@@ -1,4 +1,4 @@
-package packageMonitorExample;
+package monitor_example;
 
 public class ThreadObject implements Runnable {
 	private Thread t;
@@ -15,9 +15,9 @@ public class ThreadObject implements Runnable {
 	* @precondition: none
 	* @postcondition: none
 	*/
-	ThreadObject(Counter _counterRef, String _threadName){
-		counterRef = _counterRef;
-		threadName = _threadName;
+	ThreadObject(Counter counterRef, String threadName){
+		this.counterRef = counterRef;
+		this.threadName = threadName;
 	}
 	
 	/**
@@ -31,8 +31,6 @@ public class ThreadObject implements Runnable {
 		for(int i = 0; i < 1000;i++) {
 			counterRef.increment();
 		}
-		
-		//System.out.println(counterRef.getCount());
 	}
 	
 	

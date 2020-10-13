@@ -1,4 +1,4 @@
-package packageMonitorExample;
+package monitor_example;
 
 public class Main {
 	
