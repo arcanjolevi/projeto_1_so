@@ -15,6 +15,7 @@
 \usepackage{colortbl}
 \usepackage{framed}
 \usepackage{multicol}
+\userpackage{pdfpages} 
 
 %% Definindo o Autor e o título
 \author{Victor Emanuel Almeida \and Levi Cícero Arcanjo}
@@ -47,14 +48,15 @@
 
 \section{Algorítimo}
 
-Segue abaixo a implementação de um algorítimo para a resolução 
+Segue abaixo a implementação de um algorítimo para a resolução:
 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[keepaspectratio]{1.png}
 	\caption{\label{fig:1.png} Criação das variáveis e inicializações}
 \end{figure}
-Nesse primeiro trecho de código, temos a criação e inicialização das variáveis, tanto a variável que armazena o número de leitores ativos, quanto os semáforos A e B, que tem função de proteger a variável ``n\underline{ }readers'' e impedir a escrita enquanto alguém estiver lendo ou escrevendo respectivamente.\\
+
+Nesse primeiro trecho de código, temos a criação e inicialização das variá-~veis, tanto a variável que armazena o número de leitores ativos, quanto os semáforos A e B, que tem função de proteger a variável ``n\underline{ }readers'' e impedir a escrita enquanto alguém estiver lendo ou escrevendo respectivamente.\\
 
 \begin{figure}[!htb]
 	\centering
@@ -73,11 +75,10 @@ Nesse primeiro trecho de código, temos a criação e inicialização das variá
 	\caption{\label{fig:3.png} Implementação do escritor}
 \end{figure}
 
-Como podemos ver na figura acima o escritor espera até ser possível realizar o down(), quando concluído ele pode realizar a escrita, pois não existe nenhum outro processo lendo nem escrevendo.
-
+Como podemos ver na figura acima o escritor espera até ser possível realizar o down(), quando concluído ele pode realizar a escrita, pois não existe nenhum outro processo lendo nem escrevendo.\\
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[keepaspectratio]{4.png}
+	\includegraphics[keepaspectratio, scale=0.98]{4.png}
 	\caption{\label{fig:4.png}Implementação do leitor}
 \end{figure}
 
@@ -108,10 +109,12 @@ Agora vamos realizar a simulação do algorítimo supracitado, com os seguintes 
 		\end{itemize}
 \end{itemize}
 \end{multicols}
-	 
-\begin{figure*}[!htb]
-	\centering
-	\includegraphics[keepaspectratio, width=.97\textwidth]{tabela.jpeg}
-	\caption{\label{fig:tabela.pdf} Simulação do algorítimo}
-\end{figure*}
+
+
+%\begin{figure*}[!htb]
+%	\centering
+%	\includegraphics[keepaspectratio, width=.97\textwidth]{tabela.pdf}
+%	\caption{\label{fig:tabela.pdf} Simulação do algorítimo}
+%\end{figure*}
+
 \end{document}
