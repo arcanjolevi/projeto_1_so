@@ -1,0 +1,8 @@
+-> Monitor implementado na classe "Counter", no método "increment"
+-> O monitor é importante nessa implementação para evitar que o contador seja 
+incrementado de forma errada por várias threads que queiram realizar a operação.
+-> Caso o monitor não fosse implementado, poderia acontecer de que uma thread que
+chame o methodo "increment" da classe Counter acabe somado um valor que já está 
+sendo somado ou armazenado por outra thread, possibilitando uma somatória errada.
+-> Plataforma: linux
+-> Compilador: Java-SE 14

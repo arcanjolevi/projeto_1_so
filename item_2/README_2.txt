@@ -1,0 +1,5 @@
+-> Arquivos de entrada devem ser colocados na pasta "input".
+-> Arquivos exemplo na pasta "files"
+-> Arquivos de saída serão gerados na pasta "output"
+-> Plataforma: linux
+-> Compilador: g++
