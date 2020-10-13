@@ -11,7 +11,7 @@ using namespace std;
 
 
 /**
-  * Class: Represents a process control block structure
+  * Class: Represents a process control block
   */
 class PCB {
   private: 

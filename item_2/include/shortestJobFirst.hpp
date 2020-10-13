@@ -14,6 +14,7 @@ class SJF{
     Queue * ready;
     Queue * terminated;
     PCB * processRunning;
+    
   public:
 
   /**
